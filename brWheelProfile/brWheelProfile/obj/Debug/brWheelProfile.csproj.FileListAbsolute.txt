@@ -1,0 +1,9 @@
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\bin\Debug\brWheelProfile.exe
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\bin\Debug\brWheelProfile.pdb
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.csprojResolveAssemblyReference.cache
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.Properties.Resources.resources
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.csproj.GenerateResource.Cache
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.csproj.CoreCompileInputs.cache
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.exe
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.pdb
+C:\Users\ferna\Documents\Visual Studio 2017\Projects\brWheelProfile\brWheelProfile\obj\Debug\brWheelProfile.FormBRWProfile.resources
