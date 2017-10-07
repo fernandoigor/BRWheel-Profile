@@ -28,24 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBRWProfile));
             this.trackBarGain = new System.Windows.Forms.TrackBar();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelRampValue = new System.Windows.Forms.Label();
-            this.labelRamp = new System.Windows.Forms.Label();
-            this.trackBarRamp = new System.Windows.Forms.TrackBar();
+            this.groupBoxEffects = new System.Windows.Forms.GroupBox();
+            this.labelSineValue = new System.Windows.Forms.Label();
+            this.labelSine = new System.Windows.Forms.Label();
+            this.trackBarSine = new System.Windows.Forms.TrackBar();
+            this.trackBarSpring = new System.Windows.Forms.TrackBar();
+            this.labelSpringValue = new System.Windows.Forms.Label();
+            this.labelSpring = new System.Windows.Forms.Label();
+            this.trackBarInertia = new System.Windows.Forms.TrackBar();
+            this.labelInertiaValue = new System.Windows.Forms.Label();
+            this.labelInertia = new System.Windows.Forms.Label();
+            this.labelDamperValue = new System.Windows.Forms.Label();
+            this.labelDamper = new System.Windows.Forms.Label();
+            this.trackBarDamper = new System.Windows.Forms.TrackBar();
+            this.labelFrictionValue = new System.Windows.Forms.Label();
+            this.labelFriction = new System.Windows.Forms.Label();
+            this.trackBarFriction = new System.Windows.Forms.TrackBar();
             this.labelConstantValue = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelConstant = new System.Windows.Forms.Label();
             this.trackBarConstant = new System.Windows.Forms.TrackBar();
             this.labelGainValue = new System.Windows.Forms.Label();
             this.labelGain = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.groupBoxForce = new System.Windows.Forms.GroupBox();
+            this.trackBarMaximum = new System.Windows.Forms.TrackBar();
+            this.trackBarMinimal = new System.Windows.Forms.TrackBar();
+            this.labelStopValue = new System.Windows.Forms.Label();
+            this.labelStop = new System.Windows.Forms.Label();
+            this.trackBarStop = new System.Windows.Forms.TrackBar();
+            this.labelDesktopValue = new System.Windows.Forms.Label();
+            this.labelDesktop = new System.Windows.Forms.Label();
+            this.trackBarDesktop = new System.Windows.Forms.TrackBar();
+            this.labelMaximumValue = new System.Windows.Forms.Label();
+            this.labelMaximum = new System.Windows.Forms.Label();
+            this.labelMinimalValue = new System.Windows.Forms.Label();
+            this.labelMinimal = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,17 +74,34 @@
             this.labelRotationValue = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.trackBarRotation = new System.Windows.Forms.TrackBar();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBoxStatus = new System.Windows.Forms.GroupBox();
+            this.labelProfileVersion = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelFirmwareVersion = new System.Windows.Forms.Label();
+            this.labelFirmware = new System.Windows.Forms.Label();
+            this.labelStatusValue = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelCOMPort = new System.Windows.Forms.Label();
+            this.comboBoxCOM = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarRamp)).BeginInit();
+            this.groupBoxEffects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSpring)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInertia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDamper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFriction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarConstant)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            this.groupBoxForce.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarMaximum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarMinimal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDesktop)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBRW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotation)).BeginInit();
+            this.groupBoxStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // trackBarGain
@@ -79,74 +115,210 @@
             this.trackBarGain.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarGain.Scroll += new System.EventHandler(this.trackBarGain_Scroll);
             // 
-            // groupBox1
+            // groupBoxEffects
             // 
-            this.groupBox1.Controls.Add(this.labelRampValue);
-            this.groupBox1.Controls.Add(this.labelRamp);
-            this.groupBox1.Controls.Add(this.trackBarRamp);
-            this.groupBox1.Controls.Add(this.labelConstantValue);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.trackBarConstant);
-            this.groupBox1.Controls.Add(this.labelGainValue);
-            this.groupBox1.Controls.Add(this.labelGain);
-            this.groupBox1.Controls.Add(this.trackBarGain);
-            this.groupBox1.Location = new System.Drawing.Point(327, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 135);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Effects";
+            this.groupBoxEffects.Controls.Add(this.labelSineValue);
+            this.groupBoxEffects.Controls.Add(this.labelSine);
+            this.groupBoxEffects.Controls.Add(this.trackBarSine);
+            this.groupBoxEffects.Controls.Add(this.trackBarSpring);
+            this.groupBoxEffects.Controls.Add(this.labelSpringValue);
+            this.groupBoxEffects.Controls.Add(this.labelSpring);
+            this.groupBoxEffects.Controls.Add(this.trackBarInertia);
+            this.groupBoxEffects.Controls.Add(this.labelInertiaValue);
+            this.groupBoxEffects.Controls.Add(this.labelInertia);
+            this.groupBoxEffects.Controls.Add(this.labelDamperValue);
+            this.groupBoxEffects.Controls.Add(this.labelDamper);
+            this.groupBoxEffects.Controls.Add(this.trackBarDamper);
+            this.groupBoxEffects.Controls.Add(this.labelFrictionValue);
+            this.groupBoxEffects.Controls.Add(this.labelFriction);
+            this.groupBoxEffects.Controls.Add(this.trackBarFriction);
+            this.groupBoxEffects.Controls.Add(this.labelConstantValue);
+            this.groupBoxEffects.Controls.Add(this.labelConstant);
+            this.groupBoxEffects.Controls.Add(this.trackBarConstant);
+            this.groupBoxEffects.Controls.Add(this.labelGainValue);
+            this.groupBoxEffects.Controls.Add(this.labelGain);
+            this.groupBoxEffects.Controls.Add(this.trackBarGain);
+            this.groupBoxEffects.Location = new System.Drawing.Point(327, 12);
+            this.groupBoxEffects.Name = "groupBoxEffects";
+            this.groupBoxEffects.Size = new System.Drawing.Size(358, 241);
+            this.groupBoxEffects.TabIndex = 3;
+            this.groupBoxEffects.TabStop = false;
+            this.groupBoxEffects.Text = "Effects";
             // 
-            // labelRampValue
+            // labelSineValue
             // 
-            this.labelRampValue.AutoSize = true;
-            this.labelRampValue.Location = new System.Drawing.Point(318, 86);
-            this.labelRampValue.Name = "labelRampValue";
-            this.labelRampValue.Size = new System.Drawing.Size(24, 13);
-            this.labelRampValue.TabIndex = 11;
-            this.labelRampValue.Text = "0 %";
-            this.labelRampValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelSineValue.AutoSize = true;
+            this.labelSineValue.Location = new System.Drawing.Point(318, 192);
+            this.labelSineValue.Name = "labelSineValue";
+            this.labelSineValue.Size = new System.Drawing.Size(24, 13);
+            this.labelSineValue.TabIndex = 23;
+            this.labelSineValue.Text = "0 %";
+            this.labelSineValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelRamp
+            // labelSine
             // 
-            this.labelRamp.AutoSize = true;
-            this.labelRamp.Location = new System.Drawing.Point(6, 86);
-            this.labelRamp.Name = "labelRamp";
-            this.labelRamp.Size = new System.Drawing.Size(35, 13);
-            this.labelRamp.TabIndex = 10;
-            this.labelRamp.Text = "Ramp";
-            this.labelRamp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelSine.AutoSize = true;
+            this.labelSine.Location = new System.Drawing.Point(6, 192);
+            this.labelSine.Name = "labelSine";
+            this.labelSine.Size = new System.Drawing.Size(28, 13);
+            this.labelSine.TabIndex = 22;
+            this.labelSine.Text = "Sine";
+            this.labelSine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // trackBarRamp
+            // trackBarSine
             // 
-            this.trackBarRamp.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.trackBarRamp.Location = new System.Drawing.Point(67, 83);
-            this.trackBarRamp.Maximum = 200;
-            this.trackBarRamp.Name = "trackBarRamp";
-            this.trackBarRamp.Size = new System.Drawing.Size(249, 45);
-            this.trackBarRamp.TabIndex = 9;
-            this.trackBarRamp.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarRamp.Scroll += new System.EventHandler(this.trackBarRamp_Scroll);
+            this.trackBarSine.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarSine.Location = new System.Drawing.Point(67, 190);
+            this.trackBarSine.Maximum = 200;
+            this.trackBarSine.Name = "trackBarSine";
+            this.trackBarSine.Size = new System.Drawing.Size(249, 45);
+            this.trackBarSine.TabIndex = 21;
+            this.trackBarSine.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarSine.Scroll += new System.EventHandler(this.trackBarSine_Scroll);
+            // 
+            // trackBarSpring
+            // 
+            this.trackBarSpring.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarSpring.Location = new System.Drawing.Point(67, 163);
+            this.trackBarSpring.Maximum = 200;
+            this.trackBarSpring.Name = "trackBarSpring";
+            this.trackBarSpring.Size = new System.Drawing.Size(249, 45);
+            this.trackBarSpring.TabIndex = 20;
+            this.trackBarSpring.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarSpring.Scroll += new System.EventHandler(this.trackBarSpring_Scroll);
+            // 
+            // labelSpringValue
+            // 
+            this.labelSpringValue.AutoSize = true;
+            this.labelSpringValue.Location = new System.Drawing.Point(318, 165);
+            this.labelSpringValue.Name = "labelSpringValue";
+            this.labelSpringValue.Size = new System.Drawing.Size(24, 13);
+            this.labelSpringValue.TabIndex = 19;
+            this.labelSpringValue.Text = "0 %";
+            this.labelSpringValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelSpring
+            // 
+            this.labelSpring.AutoSize = true;
+            this.labelSpring.Location = new System.Drawing.Point(6, 165);
+            this.labelSpring.Name = "labelSpring";
+            this.labelSpring.Size = new System.Drawing.Size(37, 13);
+            this.labelSpring.TabIndex = 18;
+            this.labelSpring.Text = "Spring";
+            this.labelSpring.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // trackBarInertia
+            // 
+            this.trackBarInertia.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarInertia.Location = new System.Drawing.Point(67, 136);
+            this.trackBarInertia.Maximum = 200;
+            this.trackBarInertia.Name = "trackBarInertia";
+            this.trackBarInertia.Size = new System.Drawing.Size(249, 45);
+            this.trackBarInertia.TabIndex = 17;
+            this.trackBarInertia.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarInertia.Scroll += new System.EventHandler(this.trackBarInertia_Scroll);
+            // 
+            // labelInertiaValue
+            // 
+            this.labelInertiaValue.AutoSize = true;
+            this.labelInertiaValue.Location = new System.Drawing.Point(318, 138);
+            this.labelInertiaValue.Name = "labelInertiaValue";
+            this.labelInertiaValue.Size = new System.Drawing.Size(24, 13);
+            this.labelInertiaValue.TabIndex = 16;
+            this.labelInertiaValue.Text = "0 %";
+            this.labelInertiaValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelInertia
+            // 
+            this.labelInertia.AutoSize = true;
+            this.labelInertia.Location = new System.Drawing.Point(6, 138);
+            this.labelInertia.Name = "labelInertia";
+            this.labelInertia.Size = new System.Drawing.Size(36, 13);
+            this.labelInertia.TabIndex = 15;
+            this.labelInertia.Text = "Inertia";
+            this.labelInertia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelDamperValue
+            // 
+            this.labelDamperValue.AutoSize = true;
+            this.labelDamperValue.Location = new System.Drawing.Point(318, 111);
+            this.labelDamperValue.Name = "labelDamperValue";
+            this.labelDamperValue.Size = new System.Drawing.Size(24, 13);
+            this.labelDamperValue.TabIndex = 14;
+            this.labelDamperValue.Text = "0 %";
+            this.labelDamperValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelDamper
+            // 
+            this.labelDamper.AutoSize = true;
+            this.labelDamper.Location = new System.Drawing.Point(6, 111);
+            this.labelDamper.Name = "labelDamper";
+            this.labelDamper.Size = new System.Drawing.Size(44, 13);
+            this.labelDamper.TabIndex = 13;
+            this.labelDamper.Text = "Damper";
+            this.labelDamper.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // trackBarDamper
+            // 
+            this.trackBarDamper.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarDamper.Location = new System.Drawing.Point(67, 109);
+            this.trackBarDamper.Maximum = 200;
+            this.trackBarDamper.Name = "trackBarDamper";
+            this.trackBarDamper.Size = new System.Drawing.Size(249, 45);
+            this.trackBarDamper.TabIndex = 12;
+            this.trackBarDamper.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarDamper.Scroll += new System.EventHandler(this.trackBarDamper_Scroll);
+            // 
+            // labelFrictionValue
+            // 
+            this.labelFrictionValue.AutoSize = true;
+            this.labelFrictionValue.Location = new System.Drawing.Point(318, 84);
+            this.labelFrictionValue.Name = "labelFrictionValue";
+            this.labelFrictionValue.Size = new System.Drawing.Size(24, 13);
+            this.labelFrictionValue.TabIndex = 11;
+            this.labelFrictionValue.Text = "0 %";
+            this.labelFrictionValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelFriction
+            // 
+            this.labelFriction.AutoSize = true;
+            this.labelFriction.Location = new System.Drawing.Point(6, 84);
+            this.labelFriction.Name = "labelFriction";
+            this.labelFriction.Size = new System.Drawing.Size(41, 13);
+            this.labelFriction.TabIndex = 10;
+            this.labelFriction.Text = "Friction";
+            this.labelFriction.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // trackBarFriction
+            // 
+            this.trackBarFriction.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarFriction.Location = new System.Drawing.Point(67, 82);
+            this.trackBarFriction.Maximum = 200;
+            this.trackBarFriction.Name = "trackBarFriction";
+            this.trackBarFriction.Size = new System.Drawing.Size(249, 45);
+            this.trackBarFriction.TabIndex = 9;
+            this.trackBarFriction.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarFriction.Scroll += new System.EventHandler(this.trackBarFriction_Scroll);
             // 
             // labelConstantValue
             // 
             this.labelConstantValue.AutoSize = true;
-            this.labelConstantValue.Location = new System.Drawing.Point(318, 58);
+            this.labelConstantValue.Location = new System.Drawing.Point(318, 57);
             this.labelConstantValue.Name = "labelConstantValue";
             this.labelConstantValue.Size = new System.Drawing.Size(24, 13);
             this.labelConstantValue.TabIndex = 8;
             this.labelConstantValue.Text = "0 %";
             this.labelConstantValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // labelConstant
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Constant";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelConstant.AutoSize = true;
+            this.labelConstant.Location = new System.Drawing.Point(6, 57);
+            this.labelConstant.Name = "labelConstant";
+            this.labelConstant.Size = new System.Drawing.Size(49, 13);
+            this.labelConstant.TabIndex = 7;
+            this.labelConstant.Text = "Constant";
+            this.labelConstant.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // trackBarConstant
             // 
@@ -179,80 +351,151 @@
             this.labelGain.Text = "Main Gain";
             this.labelGain.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // groupBox2
+            // groupBoxForce
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.trackBar2);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.trackBar3);
-            this.groupBox2.Location = new System.Drawing.Point(327, 153);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(358, 102);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Force";
+            this.groupBoxForce.Controls.Add(this.trackBarMaximum);
+            this.groupBoxForce.Controls.Add(this.trackBarMinimal);
+            this.groupBoxForce.Controls.Add(this.labelStopValue);
+            this.groupBoxForce.Controls.Add(this.labelStop);
+            this.groupBoxForce.Controls.Add(this.trackBarStop);
+            this.groupBoxForce.Controls.Add(this.labelDesktopValue);
+            this.groupBoxForce.Controls.Add(this.labelDesktop);
+            this.groupBoxForce.Controls.Add(this.trackBarDesktop);
+            this.groupBoxForce.Controls.Add(this.labelMaximumValue);
+            this.groupBoxForce.Controls.Add(this.labelMaximum);
+            this.groupBoxForce.Controls.Add(this.labelMinimalValue);
+            this.groupBoxForce.Controls.Add(this.labelMinimal);
+            this.groupBoxForce.Location = new System.Drawing.Point(327, 260);
+            this.groupBoxForce.Name = "groupBoxForce";
+            this.groupBoxForce.Size = new System.Drawing.Size(358, 158);
+            this.groupBoxForce.TabIndex = 12;
+            this.groupBoxForce.TabStop = false;
+            this.groupBoxForce.Text = "Force";
             // 
-            // label4
+            // trackBarMaximum
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(318, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "0 %";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.trackBarMaximum.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarMaximum.Location = new System.Drawing.Point(67, 104);
+            this.trackBarMaximum.Maximum = 400;
+            this.trackBarMaximum.Name = "trackBarMaximum";
+            this.trackBarMaximum.Size = new System.Drawing.Size(249, 45);
+            this.trackBarMaximum.TabIndex = 6;
+            this.trackBarMaximum.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarMaximum.Value = 400;
+            this.trackBarMaximum.Scroll += new System.EventHandler(this.trackBarMaximum_Scroll);
             // 
-            // label5
+            // trackBarMinimal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Maximum";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.trackBarMinimal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarMinimal.Location = new System.Drawing.Point(67, 76);
+            this.trackBarMinimal.Maximum = 400;
+            this.trackBarMinimal.Name = "trackBarMinimal";
+            this.trackBarMinimal.Size = new System.Drawing.Size(249, 45);
+            this.trackBarMinimal.TabIndex = 2;
+            this.trackBarMinimal.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarMinimal.Scroll += new System.EventHandler(this.trackBarMinimal_Scroll);
             // 
-            // trackBar2
+            // labelStopValue
             // 
-            this.trackBar2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.trackBar2.Location = new System.Drawing.Point(67, 55);
-            this.trackBar2.Maximum = 400;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(249, 45);
-            this.trackBar2.TabIndex = 6;
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.labelStopValue.AutoSize = true;
+            this.labelStopValue.Location = new System.Drawing.Point(318, 51);
+            this.labelStopValue.Name = "labelStopValue";
+            this.labelStopValue.Size = new System.Drawing.Size(24, 13);
+            this.labelStopValue.TabIndex = 14;
+            this.labelStopValue.Text = "0 %";
+            this.labelStopValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label6
+            // labelStop
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(318, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "0 %";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelStop.AutoSize = true;
+            this.labelStop.Location = new System.Drawing.Point(6, 51);
+            this.labelStop.Name = "labelStop";
+            this.labelStop.Size = new System.Drawing.Size(29, 13);
+            this.labelStop.TabIndex = 13;
+            this.labelStop.Text = "Stop";
+            this.labelStop.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label7
+            // trackBarStop
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Minimal";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.trackBarStop.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarStop.Location = new System.Drawing.Point(67, 47);
+            this.trackBarStop.Maximum = 200;
+            this.trackBarStop.Name = "trackBarStop";
+            this.trackBarStop.Size = new System.Drawing.Size(249, 45);
+            this.trackBarStop.TabIndex = 12;
+            this.trackBarStop.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarStop.Scroll += new System.EventHandler(this.trackBarStop_Scroll);
             // 
-            // trackBar3
+            // labelDesktopValue
             // 
-            this.trackBar3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.trackBar3.Location = new System.Drawing.Point(67, 27);
-            this.trackBar3.Maximum = 400;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(249, 45);
-            this.trackBar3.TabIndex = 2;
-            this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.labelDesktopValue.AutoSize = true;
+            this.labelDesktopValue.Location = new System.Drawing.Point(318, 22);
+            this.labelDesktopValue.Name = "labelDesktopValue";
+            this.labelDesktopValue.Size = new System.Drawing.Size(24, 13);
+            this.labelDesktopValue.TabIndex = 11;
+            this.labelDesktopValue.Text = "0 %";
+            this.labelDesktopValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelDesktop
+            // 
+            this.labelDesktop.AutoSize = true;
+            this.labelDesktop.Location = new System.Drawing.Point(6, 22);
+            this.labelDesktop.Name = "labelDesktop";
+            this.labelDesktop.Size = new System.Drawing.Size(47, 13);
+            this.labelDesktop.TabIndex = 10;
+            this.labelDesktop.Text = "Desktop";
+            this.labelDesktop.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // trackBarDesktop
+            // 
+            this.trackBarDesktop.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarDesktop.Location = new System.Drawing.Point(67, 19);
+            this.trackBarDesktop.Maximum = 200;
+            this.trackBarDesktop.Name = "trackBarDesktop";
+            this.trackBarDesktop.Size = new System.Drawing.Size(249, 45);
+            this.trackBarDesktop.TabIndex = 9;
+            this.trackBarDesktop.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarDesktop.Scroll += new System.EventHandler(this.trackBarDestkop_Scroll);
+            // 
+            // labelMaximumValue
+            // 
+            this.labelMaximumValue.AutoSize = true;
+            this.labelMaximumValue.Location = new System.Drawing.Point(318, 109);
+            this.labelMaximumValue.Name = "labelMaximumValue";
+            this.labelMaximumValue.Size = new System.Drawing.Size(24, 13);
+            this.labelMaximumValue.TabIndex = 8;
+            this.labelMaximumValue.Text = "0 %";
+            this.labelMaximumValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMaximum
+            // 
+            this.labelMaximum.AutoSize = true;
+            this.labelMaximum.Location = new System.Drawing.Point(6, 109);
+            this.labelMaximum.Name = "labelMaximum";
+            this.labelMaximum.Size = new System.Drawing.Size(51, 13);
+            this.labelMaximum.TabIndex = 7;
+            this.labelMaximum.Text = "Maximum";
+            this.labelMaximum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMinimalValue
+            // 
+            this.labelMinimalValue.AutoSize = true;
+            this.labelMinimalValue.Location = new System.Drawing.Point(318, 80);
+            this.labelMinimalValue.Name = "labelMinimalValue";
+            this.labelMinimalValue.Size = new System.Drawing.Size(24, 13);
+            this.labelMinimalValue.TabIndex = 5;
+            this.labelMinimalValue.Text = "0 %";
+            this.labelMinimalValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMinimal
+            // 
+            this.labelMinimal.AutoSize = true;
+            this.labelMinimal.Location = new System.Drawing.Point(6, 80);
+            this.labelMinimal.Name = "labelMinimal";
+            this.labelMinimal.Size = new System.Drawing.Size(42, 13);
+            this.labelMinimal.TabIndex = 4;
+            this.labelMinimal.Text = "Minimal";
+            this.labelMinimal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox3
             // 
@@ -309,6 +552,7 @@
             this.buttonCalibrate.TabIndex = 7;
             this.buttonCalibrate.Text = "Calibrate";
             this.buttonCalibrate.UseVisualStyleBackColor = true;
+            this.buttonCalibrate.Click += new System.EventHandler(this.buttonCalibrate_Click);
             // 
             // buttonCenterWheel
             // 
@@ -349,17 +593,113 @@
             this.trackBarRotation.Size = new System.Drawing.Size(199, 45);
             this.trackBarRotation.TabIndex = 2;
             this.trackBarRotation.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarRotation.Value = 180;
+            this.trackBarRotation.Value = 900;
             this.trackBarRotation.Scroll += new System.EventHandler(this.trackBarRotation_Scroll);
             // 
-            // groupBox4
+            // groupBoxStatus
             // 
-            this.groupBox4.Location = new System.Drawing.Point(12, 259);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(309, 117);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Conexão";
+            this.groupBoxStatus.Controls.Add(this.labelProfileVersion);
+            this.groupBoxStatus.Controls.Add(this.label3);
+            this.groupBoxStatus.Controls.Add(this.labelFirmwareVersion);
+            this.groupBoxStatus.Controls.Add(this.labelFirmware);
+            this.groupBoxStatus.Controls.Add(this.labelStatusValue);
+            this.groupBoxStatus.Controls.Add(this.labelStatus);
+            this.groupBoxStatus.Controls.Add(this.labelCOMPort);
+            this.groupBoxStatus.Controls.Add(this.comboBoxCOM);
+            this.groupBoxStatus.Location = new System.Drawing.Point(12, 259);
+            this.groupBoxStatus.Name = "groupBoxStatus";
+            this.groupBoxStatus.Size = new System.Drawing.Size(309, 159);
+            this.groupBoxStatus.TabIndex = 14;
+            this.groupBoxStatus.TabStop = false;
+            this.groupBoxStatus.Text = "Status";
+            // 
+            // labelProfileVersion
+            // 
+            this.labelProfileVersion.AutoSize = true;
+            this.labelProfileVersion.Location = new System.Drawing.Point(232, 52);
+            this.labelProfileVersion.Name = "labelProfileVersion";
+            this.labelProfileVersion.Size = new System.Drawing.Size(47, 13);
+            this.labelProfileVersion.TabIndex = 7;
+            this.labelProfileVersion.Text = "Unknow";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(156, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Profile Version:";
+            // 
+            // labelFirmwareVersion
+            // 
+            this.labelFirmwareVersion.AutoSize = true;
+            this.labelFirmwareVersion.Location = new System.Drawing.Point(58, 52);
+            this.labelFirmwareVersion.Name = "labelFirmwareVersion";
+            this.labelFirmwareVersion.Size = new System.Drawing.Size(47, 13);
+            this.labelFirmwareVersion.TabIndex = 5;
+            this.labelFirmwareVersion.Text = "Unknow";
+            // 
+            // labelFirmware
+            // 
+            this.labelFirmware.AutoSize = true;
+            this.labelFirmware.Location = new System.Drawing.Point(7, 52);
+            this.labelFirmware.Name = "labelFirmware";
+            this.labelFirmware.Size = new System.Drawing.Size(52, 13);
+            this.labelFirmware.TabIndex = 4;
+            this.labelFirmware.Text = "Firmware:";
+            // 
+            // labelStatusValue
+            // 
+            this.labelStatusValue.AutoSize = true;
+            this.labelStatusValue.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.labelStatusValue.ForeColor = System.Drawing.Color.Red;
+            this.labelStatusValue.Location = new System.Drawing.Point(43, 22);
+            this.labelStatusValue.Name = "labelStatusValue";
+            this.labelStatusValue.Size = new System.Drawing.Size(47, 13);
+            this.labelStatusValue.TabIndex = 3;
+            this.labelStatusValue.Text = "Unknow";
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.labelStatus.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelStatus.Location = new System.Drawing.Point(6, 22);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(34, 13);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "Stats:";
+            // 
+            // labelCOMPort
+            // 
+            this.labelCOMPort.AutoSize = true;
+            this.labelCOMPort.Location = new System.Drawing.Point(161, 22);
+            this.labelCOMPort.Name = "labelCOMPort";
+            this.labelCOMPort.Size = new System.Drawing.Size(53, 13);
+            this.labelCOMPort.TabIndex = 1;
+            this.labelCOMPort.Text = "COM Port";
+            // 
+            // comboBoxCOM
+            // 
+            this.comboBoxCOM.FormattingEnabled = true;
+            this.comboBoxCOM.Location = new System.Drawing.Point(220, 19);
+            this.comboBoxCOM.Name = "comboBoxCOM";
+            this.comboBoxCOM.Size = new System.Drawing.Size(83, 21);
+            this.comboBoxCOM.TabIndex = 0;
+            this.comboBoxCOM.SelectedIndexChanged += new System.EventHandler(this.comboBoxCOM_SelectedIndexChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.time_Tick);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.BaudRate = 115200;
+            this.serialPort1.RtsEnable = true;
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // FormBRWProfile
             // 
@@ -367,30 +707,39 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(702, 430);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBoxForce);
+            this.Controls.Add(this.groupBoxEffects);
+            this.Controls.Add(this.groupBoxStatus);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(718, 469);
             this.MinimumSize = new System.Drawing.Size(718, 469);
             this.Name = "FormBRWProfile";
-            this.ShowInTaskbar = false;
+            this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "BRWheel Profile";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBRWProfile_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarRamp)).EndInit();
+            this.groupBoxEffects.ResumeLayout(false);
+            this.groupBoxEffects.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSpring)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInertia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDamper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFriction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarConstant)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            this.groupBoxForce.ResumeLayout(false);
+            this.groupBoxForce.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarMaximum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarMinimal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDesktop)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBRW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotation)).EndInit();
+            this.groupBoxStatus.ResumeLayout(false);
+            this.groupBoxStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -398,22 +747,22 @@
         #endregion
 
         private System.Windows.Forms.TrackBar trackBarGain;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEffects;
         private System.Windows.Forms.Label labelGain;
         private System.Windows.Forms.Label labelGainValue;
         private System.Windows.Forms.Label labelConstantValue;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelConstant;
         private System.Windows.Forms.TrackBar trackBarConstant;
-        private System.Windows.Forms.Label labelRampValue;
-        private System.Windows.Forms.Label labelRamp;
-        private System.Windows.Forms.TrackBar trackBarRamp;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Label labelFrictionValue;
+        private System.Windows.Forms.Label labelFriction;
+        private System.Windows.Forms.TrackBar trackBarFriction;
+        private System.Windows.Forms.GroupBox groupBoxForce;
+        private System.Windows.Forms.Label labelMaximumValue;
+        private System.Windows.Forms.Label labelMaximum;
+        private System.Windows.Forms.TrackBar trackBarMaximum;
+        private System.Windows.Forms.Label labelMinimalValue;
+        private System.Windows.Forms.Label labelMinimal;
+        private System.Windows.Forms.TrackBar trackBarMinimal;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label labelRotationValue;
         private System.Windows.Forms.Label label13;
@@ -423,7 +772,35 @@
         private System.Windows.Forms.Button buttonCenterWheel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBoxStatus;
+        private System.Windows.Forms.ComboBox comboBoxCOM;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Label labelCOMPort;
+        private System.Windows.Forms.Label labelStatusValue;
+        private System.Windows.Forms.Timer timer1;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Label labelSine;
+        private System.Windows.Forms.TrackBar trackBarSine;
+        private System.Windows.Forms.TrackBar trackBarSpring;
+        private System.Windows.Forms.Label labelSpringValue;
+        private System.Windows.Forms.Label labelSpring;
+        private System.Windows.Forms.TrackBar trackBarInertia;
+        private System.Windows.Forms.Label labelInertiaValue;
+        private System.Windows.Forms.Label labelInertia;
+        private System.Windows.Forms.Label labelDamperValue;
+        private System.Windows.Forms.Label labelDamper;
+        private System.Windows.Forms.TrackBar trackBarDamper;
+        private System.Windows.Forms.Label labelSineValue;
+        private System.Windows.Forms.Label labelStopValue;
+        private System.Windows.Forms.Label labelStop;
+        private System.Windows.Forms.TrackBar trackBarStop;
+        private System.Windows.Forms.Label labelDesktopValue;
+        private System.Windows.Forms.Label labelDesktop;
+        private System.Windows.Forms.TrackBar trackBarDesktop;
+        private System.Windows.Forms.Label labelFirmware;
+        private System.Windows.Forms.Label labelFirmwareVersion;
+        private System.Windows.Forms.Label labelProfileVersion;
+        private System.Windows.Forms.Label label3;
     }
 }
 

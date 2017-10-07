@@ -13,11 +13,9 @@ namespace brWheelProfile
         [STAThread]
         static void Main()
         {
-            Console.WriteLine("aaaaaaa");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormBRWProfile());
-            Console.WriteLine("bbbbb");
         }
     }
 }
