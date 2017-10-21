@@ -562,6 +562,7 @@
             this.buttonCenterWheel.TabIndex = 6;
             this.buttonCenterWheel.Text = "Center Wheel";
             this.buttonCenterWheel.UseVisualStyleBackColor = true;
+            this.buttonCenterWheel.Click += new System.EventHandler(this.buttonCenter_Click);
             // 
             // labelRotationValue
             // 
@@ -692,7 +693,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.time_Tick);
             // 
             // serialPort1
@@ -711,6 +712,7 @@
             this.Controls.Add(this.groupBoxEffects);
             this.Controls.Add(this.groupBoxStatus);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(718, 469);
             this.MinimumSize = new System.Drawing.Size(718, 469);
@@ -719,6 +721,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "BRWheel Profile";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBRWProfile_FormClosed);
+            this.Load += new System.EventHandler(this.form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).EndInit();
             this.groupBoxEffects.ResumeLayout(false);
             this.groupBoxEffects.PerformLayout();

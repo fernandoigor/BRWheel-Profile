@@ -1,5 +1,5 @@
 # BRWheel-Profile
-BRWheel joystick setup program.
-
+Set the joystick parameters to the BRWheel firmware
+https://github.com/fernandoigor/BRWheel
 
 Still no working!

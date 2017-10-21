@@ -19,7 +19,7 @@ namespace brWheelProfile
         string RxString;
         string fwVersion = null;
 
-        int lastRotationValue = 900;
+        int lastRotationValue = 0;
         int lastGainValue=0;
         int lastConstantValue = 0;
         int lastFrictionValue = 0;
@@ -128,7 +128,7 @@ namespace brWheelProfile
             //se a quantidade de portas mudou
             if (serialPort1.IsOpen == false)
             {
-                if (comboBoxCOM.Items.Count == SerialPort.GetPortNames().Length + 1)
+                if (comboBoxCOM.Items.Count == SerialPort.GetPortNames().Length)
                 {
                     foreach (string s in SerialPort.GetPortNames())
                     {
@@ -234,62 +234,75 @@ namespace brWheelProfile
                 {
                     lastRotationValue = trackBarRotation.Value;
                     serialPort1.Write("g" + lastRotationValue);
+                    Properties.Settings.Default.Rotation = lastRotationValue;
                 }
                 else if (trackBarGain.Value != lastGainValue)
                 {
                     lastGainValue = trackBarGain.Value;
                     serialPort1.Write("fg" + lastGainValue);
+                    Properties.Settings.Default.Gain = lastGainValue;
                 }
                 else if (trackBarConstant.Value != lastConstantValue)
                 {
                     lastConstantValue = trackBarConstant.Value;
                     serialPort1.Write("fc" + lastConstantValue);
+                    Properties.Settings.Default.Constant = lastConstantValue;
                 }
                 else if (trackBarFriction.Value != lastFrictionValue)
                 {
                     lastFrictionValue = trackBarFriction.Value;
                     serialPort1.Write("ff" + lastFrictionValue);
+                    Properties.Settings.Default.Friction = lastFrictionValue;
                 }
                 else if (trackBarDamper.Value != lastDamperValue)
                 {
                     lastDamperValue = trackBarDamper.Value;
                     serialPort1.Write("fd" + lastDamperValue);
+                    Properties.Settings.Default.Damper = lastDamperValue;
                 }
                 else if (trackBarInertia.Value != lastInertiaValue)
                 {
                     lastInertiaValue = trackBarInertia.Value;
                     serialPort1.Write("fi" + lastInertiaValue);
+                    Properties.Settings.Default.Inertia = lastInertiaValue;
                 }
                 else if (trackBarSpring.Value != lastSpringValue)
                 {
                     lastSpringValue = trackBarSpring.Value;
                     serialPort1.Write("fm" + lastSpringValue);
+                    Properties.Settings.Default.Spring = lastSpringValue;
                 }
                 else if (trackBarSine.Value != lastSineValue)
                 {
                     lastSineValue = trackBarSine.Value;
                     serialPort1.Write("fs" + lastSineValue);
+                    Properties.Settings.Default.Sine = lastSineValue;
                 }
                 else if (trackBarDesktop.Value != lastDesktopValue)
                 {
                     lastDesktopValue = trackBarDesktop.Value;
                     serialPort1.Write("fa" + lastDesktopValue);
+                    Properties.Settings.Default.Desktop = lastDesktopValue;
                 }
                 else if (trackBarStop.Value != lastStopValue)
                 {
                     lastStopValue = trackBarStop.Value;
                     serialPort1.Write("fb" + lastStopValue);
+                    Properties.Settings.Default.Stop = lastStopValue;
                 }
                 else if (trackBarMinimal.Value != lastMinimalValue)
                 {
                     lastMinimalValue = trackBarMinimal.Value;
                     serialPort1.Write("fj" + lastMinimalValue);
+                    Properties.Settings.Default.Minimal = lastMinimalValue;
                 }
                 else if (trackBarMaximum.Value != lastMaximumValue)
                 {
                     lastMaximumValue = trackBarMaximum.Value;
                     serialPort1.Write("fk" + lastMaximumValue);
+                    Properties.Settings.Default.Maximum = lastMaximumValue;
                 }
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -301,17 +314,43 @@ namespace brWheelProfile
         }
         private void changesReceived(object sender, EventArgs e)
         {
-            if (fwVersion == null)
-            {
-                fwVersion = RxString;
-                labelFirmwareVersion.Text = fwVersion;
-            }
-
+            String temp = RxString.Substring(0, 12);
+            if(temp == "BRW Version-")
+                {
+                double numberVersion = Convert.ToDouble(RxString.Substring(12))/100.0;
+                //Console.WriteLine(temp);
+                fwVersion = Convert.ToString(numberVersion);
+                labelFirmwareVersion.Text = "BRW V " + fwVersion;
+                }
         }
 
         private void buttonCalibrate_Click(object sender, EventArgs e)
         {
             calibrateValue = 1;
+        }
+
+        private void buttonCenter_Click(object sender, EventArgs e)
+        {
+            centerValue = 1;
+        }
+
+        private void form_Load(object sender, EventArgs e)
+        {
+            labelGainValue.Text = (trackBarGain.Value = Properties.Settings.Default.Gain) + " %";
+            labelConstantValue.Text = (trackBarConstant.Value = Properties.Settings.Default.Constant) + " %";
+            labelFrictionValue.Text = (trackBarFriction.Value = Properties.Settings.Default.Friction) + " %";
+            labelDamperValue.Text = (trackBarDamper.Value = Properties.Settings.Default.Damper) + " %";
+            labelInertiaValue.Text = (trackBarInertia.Value = Properties.Settings.Default.Inertia) + " %";
+            labelSpringValue.Text = (trackBarSpring.Value = Properties.Settings.Default.Spring) + " %";
+            labelSineValue.Text = (trackBarSine.Value = Properties.Settings.Default.Sine) + " %";
+
+            labelDesktopValue.Text = (trackBarDesktop.Value = Properties.Settings.Default.Desktop) + " %";
+            labelStopValue.Text = (trackBarStop.Value = Properties.Settings.Default.Stop) + " %";
+            labelMinimalValue.Text = (trackBarMinimal.Value = Properties.Settings.Default.Minimal) + "";
+            labelMaximumValue.Text = (trackBarMaximum.Value = Properties.Settings.Default.Maximum) + "";
+
+            labelRotationValue.Text = (trackBarRotation.Value = Properties.Settings.Default.Rotation) + " °";
+
         }
     }
 }
