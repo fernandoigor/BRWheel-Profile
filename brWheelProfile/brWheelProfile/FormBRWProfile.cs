@@ -123,19 +123,20 @@ namespace brWheelProfile
             int i;
             bool quantDiferente; //flag para sinalizar que a quantidade de portas mudou
 
-            i = 0;
+            i = 1;
             quantDiferente = false;
             //se a quantidade de portas mudou
             if (serialPort1.IsOpen == false)
             {
-                if (comboBoxCOM.Items.Count == SerialPort.GetPortNames().Length)
+                if (comboBoxCOM.Items.Count == SerialPort.GetPortNames().Length + 1)
                 {
                     foreach (string s in SerialPort.GetPortNames())
                     {
-                        if (comboBoxCOM.Items[i++].Equals(s) == false)
+                        if (comboBoxCOM.Items[i].Equals(s) == false)
                         {
                             quantDiferente = true;
                         }
+                        i++;
                     }
                 }
                 else
