@@ -2,4 +2,5 @@
 Set the joystick parameters to the BRWheel firmware
 https://github.com/fernandoigor/BRWheel
 
-Still no working!
+#OLD Version, see master branch.
+#Abandoned support!
