@@ -128,8 +128,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\pictureWheelDisplay.jpg" />
     <Content Include="brico.ico" />
+    <None Include="Resources\BRWheelJoy.jpg" />
+    <None Include="Resources\BRWheelDisplay.jpg" />
+    <None Include="Resources\pictureWheel.png" />
+    <None Include="Resources\pictureWheelJoy.jpg" />
+    <None Include="Resources\pictureWheel.jpg" />
+    <None Include="Resources\pictureWheelDisplay1.jpg" />
+    <None Include="Resources\pictureWheelDisplay.jpg" />
+    <None Include="Resources\pictureWheelDisplay.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

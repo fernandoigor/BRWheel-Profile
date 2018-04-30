@@ -77,7 +77,11 @@ namespace brWheelProfile
                 }
             }
 
-            if (devicePath == null) Console.WriteLine("Device not found");
+            if (devicePath == null)
+            {
+                Console.WriteLine("Device not found");
+                connected = false;
+            }
 
             //create a handle to the device by calling the constructor of the HID class
             //This can be done using either the VID/PID/Serialnumber, or the device path (string) 

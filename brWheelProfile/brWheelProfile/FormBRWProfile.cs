@@ -148,6 +148,10 @@ namespace brWheelProfile
         {
             Process.Start("www.facebook.com/fernandoigorr");
         }
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("www.github.com/fernandoigor/BRWheel-Profile");
+        }
 
         private void pictureBoxBRW_Clicked(object sender, EventArgs e)
         {
@@ -452,7 +456,8 @@ namespace brWheelProfile
         private void refreshJoystickValues()
         {
             int rotation = (joystickData.X * configData.Rotation) / 65536;
-            Image img = brWheelProfile.Properties.Resources.pictureWheelDisplay;
+            Image img = brWheelProfile.Properties.Resources.BRWheelJoy;
+
             Graphics gfx = Graphics.FromImage(img);
             gfx.TranslateTransform((float)img.Width / 2, (float)img.Height / 2);
             gfx.RotateTransform(rotation);
@@ -467,5 +472,7 @@ namespace brWheelProfile
         {
             Environment.Exit(0);
         }
+
+        
     }
 }

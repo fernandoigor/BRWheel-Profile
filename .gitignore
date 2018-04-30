@@ -13,27 +13,16 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
+
 x64/
 x86/
 bld/
-[Bb]in/
+
 [Oo]bj/
 [Ll]og/
 
 
-brWheelProfile/brWheelProfile/bin/[Dd]ebug
-/brWheelProfile/brWheelProfile/bin/[Dd]ebug/*
-/brWheelProfile/brWheelProfile/bin/[Dd]ebug/*.*
 
-brWheelProfile/brWheelProfile/obj/[Dd]ebug
-/brWheelProfile/brWheelProfile/obj/[Dd]ebug/*
-/brWheelProfile/brWheelProfile/obj/[Dd]ebug/*.*
-
-brWheelProfile/brWheelProfile/obj/[Rr]elease
-/brWheelProfile/brWheelProfile/obj/[Rr]elease/*
-/brWheelProfile/brWheelProfile/obj/[Rr]elease/*.*
 
 
 # Visual Studio 2015 cache/options directory
@@ -273,3 +262,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
