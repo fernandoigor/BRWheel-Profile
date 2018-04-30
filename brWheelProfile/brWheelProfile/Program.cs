@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace brWheelProfile
 {
@@ -16,6 +17,8 @@ namespace brWheelProfile
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormBRWProfile());
+            //Application.Run(new Form1());
         }
     }
 }
+ 

@@ -66,6 +66,8 @@
             this.labelMinimalValue = new System.Windows.Forms.Label();
             this.labelMinimal = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelProfileVersion = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxBRW = new System.Windows.Forms.PictureBox();
@@ -75,16 +77,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.trackBarRotation = new System.Windows.Forms.TrackBar();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
-            this.labelProfileVersion = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pictureWheel = new System.Windows.Forms.PictureBox();
             this.labelFirmwareVersion = new System.Windows.Forms.Label();
             this.labelFirmware = new System.Windows.Forms.Label();
             this.labelStatusValue = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.labelCOMPort = new System.Windows.Forms.Label();
-            this.comboBoxCOM = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).BeginInit();
             this.groupBoxEffects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSine)).BeginInit();
@@ -102,11 +100,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBRW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotation)).BeginInit();
             this.groupBoxStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWheel)).BeginInit();
             this.SuspendLayout();
             // 
             // trackBarGain
             // 
             this.trackBarGain.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.trackBarGain.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.trackBarGain.Enabled = false;
             this.trackBarGain.Location = new System.Drawing.Point(67, 27);
             this.trackBarGain.Maximum = 200;
             this.trackBarGain.Name = "trackBarGain";
@@ -117,6 +118,7 @@
             // 
             // groupBoxEffects
             // 
+            this.groupBoxEffects.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxEffects.Controls.Add(this.labelSineValue);
             this.groupBoxEffects.Controls.Add(this.labelSine);
             this.groupBoxEffects.Controls.Add(this.trackBarSine);
@@ -138,7 +140,7 @@
             this.groupBoxEffects.Controls.Add(this.labelGainValue);
             this.groupBoxEffects.Controls.Add(this.labelGain);
             this.groupBoxEffects.Controls.Add(this.trackBarGain);
-            this.groupBoxEffects.Location = new System.Drawing.Point(327, 12);
+            this.groupBoxEffects.Location = new System.Drawing.Point(327, 5);
             this.groupBoxEffects.Name = "groupBoxEffects";
             this.groupBoxEffects.Size = new System.Drawing.Size(358, 241);
             this.groupBoxEffects.TabIndex = 3;
@@ -353,6 +355,7 @@
             // 
             // groupBoxForce
             // 
+            this.groupBoxForce.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxForce.Controls.Add(this.trackBarMaximum);
             this.groupBoxForce.Controls.Add(this.trackBarMinimal);
             this.groupBoxForce.Controls.Add(this.labelStopValue);
@@ -365,7 +368,7 @@
             this.groupBoxForce.Controls.Add(this.labelMaximum);
             this.groupBoxForce.Controls.Add(this.labelMinimalValue);
             this.groupBoxForce.Controls.Add(this.labelMinimal);
-            this.groupBoxForce.Location = new System.Drawing.Point(327, 260);
+            this.groupBoxForce.Location = new System.Drawing.Point(327, 253);
             this.groupBoxForce.Name = "groupBoxForce";
             this.groupBoxForce.Size = new System.Drawing.Size(358, 158);
             this.groupBoxForce.TabIndex = 12;
@@ -381,7 +384,7 @@
             this.trackBarMaximum.Size = new System.Drawing.Size(249, 45);
             this.trackBarMaximum.TabIndex = 6;
             this.trackBarMaximum.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarMaximum.Value = 400;
+            this.trackBarMaximum.Value = 1;
             this.trackBarMaximum.Scroll += new System.EventHandler(this.trackBarMaximum_Scroll);
             // 
             // trackBarMinimal
@@ -499,6 +502,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.labelProfileVersion);
             this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.pictureBoxBRW);
@@ -507,11 +513,29 @@
             this.groupBox3.Controls.Add(this.labelRotationValue);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.trackBarRotation);
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Location = new System.Drawing.Point(12, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(309, 241);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(185, 222);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Profile Version:";
+            // 
+            // labelProfileVersion
+            // 
+            this.labelProfileVersion.AutoSize = true;
+            this.labelProfileVersion.Location = new System.Drawing.Point(259, 222);
+            this.labelProfileVersion.Name = "labelProfileVersion";
+            this.labelProfileVersion.Size = new System.Drawing.Size(47, 13);
+            this.labelProfileVersion.TabIndex = 7;
+            this.labelProfileVersion.Text = "Unknow";
             // 
             // linkLabel1
             // 
@@ -546,6 +570,8 @@
             // 
             // buttonCalibrate
             // 
+            this.buttonCalibrate.Cursor = System.Windows.Forms.Cursors.No;
+            this.buttonCalibrate.ForeColor = System.Drawing.Color.Black;
             this.buttonCalibrate.Location = new System.Drawing.Point(96, 190);
             this.buttonCalibrate.Name = "buttonCalibrate";
             this.buttonCalibrate.Size = new System.Drawing.Size(81, 23);
@@ -556,6 +582,7 @@
             // 
             // buttonCenterWheel
             // 
+            this.buttonCenterWheel.Cursor = System.Windows.Forms.Cursors.No;
             this.buttonCenterWheel.Location = new System.Drawing.Point(9, 190);
             this.buttonCenterWheel.Name = "buttonCenterWheel";
             this.buttonCenterWheel.Size = new System.Drawing.Size(81, 23);
@@ -594,48 +621,41 @@
             this.trackBarRotation.Size = new System.Drawing.Size(199, 45);
             this.trackBarRotation.TabIndex = 2;
             this.trackBarRotation.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarRotation.Value = 900;
+            this.trackBarRotation.Value = 200;
             this.trackBarRotation.Scroll += new System.EventHandler(this.trackBarRotation_Scroll);
             // 
             // groupBoxStatus
             // 
-            this.groupBoxStatus.Controls.Add(this.labelProfileVersion);
-            this.groupBoxStatus.Controls.Add(this.label3);
+            this.groupBoxStatus.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxStatus.Controls.Add(this.pictureWheel);
             this.groupBoxStatus.Controls.Add(this.labelFirmwareVersion);
             this.groupBoxStatus.Controls.Add(this.labelFirmware);
             this.groupBoxStatus.Controls.Add(this.labelStatusValue);
             this.groupBoxStatus.Controls.Add(this.labelStatus);
-            this.groupBoxStatus.Controls.Add(this.labelCOMPort);
-            this.groupBoxStatus.Controls.Add(this.comboBoxCOM);
-            this.groupBoxStatus.Location = new System.Drawing.Point(12, 259);
+            this.groupBoxStatus.Location = new System.Drawing.Point(12, 252);
             this.groupBoxStatus.Name = "groupBoxStatus";
             this.groupBoxStatus.Size = new System.Drawing.Size(309, 159);
             this.groupBoxStatus.TabIndex = 14;
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status";
             // 
-            // labelProfileVersion
+            // pictureWheel
             // 
-            this.labelProfileVersion.AutoSize = true;
-            this.labelProfileVersion.Location = new System.Drawing.Point(232, 52);
-            this.labelProfileVersion.Name = "labelProfileVersion";
-            this.labelProfileVersion.Size = new System.Drawing.Size(47, 13);
-            this.labelProfileVersion.TabIndex = 7;
-            this.labelProfileVersion.Text = "Unknow";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Profile Version:";
+            this.pictureWheel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureWheel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureWheel.Image = global::brWheelProfile.Properties.Resources.pictureWheelDisplay;
+            this.pictureWheel.InitialImage = null;
+            this.pictureWheel.Location = new System.Drawing.Point(12, 41);
+            this.pictureWheel.Name = "pictureWheel";
+            this.pictureWheel.Size = new System.Drawing.Size(120, 75);
+            this.pictureWheel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureWheel.TabIndex = 15;
+            this.pictureWheel.TabStop = false;
             // 
             // labelFirmwareVersion
             // 
             this.labelFirmwareVersion.AutoSize = true;
-            this.labelFirmwareVersion.Location = new System.Drawing.Point(58, 52);
+            this.labelFirmwareVersion.Location = new System.Drawing.Point(241, 20);
             this.labelFirmwareVersion.Name = "labelFirmwareVersion";
             this.labelFirmwareVersion.Size = new System.Drawing.Size(47, 13);
             this.labelFirmwareVersion.TabIndex = 5;
@@ -644,7 +664,7 @@
             // labelFirmware
             // 
             this.labelFirmware.AutoSize = true;
-            this.labelFirmware.Location = new System.Drawing.Point(7, 52);
+            this.labelFirmware.Location = new System.Drawing.Point(190, 20);
             this.labelFirmware.Name = "labelFirmware";
             this.labelFirmware.Size = new System.Drawing.Size(52, 13);
             this.labelFirmware.TabIndex = 4;
@@ -655,7 +675,7 @@
             this.labelStatusValue.AutoSize = true;
             this.labelStatusValue.BackColor = System.Drawing.SystemColors.ControlDark;
             this.labelStatusValue.ForeColor = System.Drawing.Color.Red;
-            this.labelStatusValue.Location = new System.Drawing.Point(43, 22);
+            this.labelStatusValue.Location = new System.Drawing.Point(53, 20);
             this.labelStatusValue.Name = "labelStatusValue";
             this.labelStatusValue.Size = new System.Drawing.Size(47, 13);
             this.labelStatusValue.TabIndex = 3;
@@ -666,56 +686,34 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.BackColor = System.Drawing.SystemColors.ControlDark;
             this.labelStatus.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelStatus.Location = new System.Drawing.Point(6, 22);
+            this.labelStatus.Location = new System.Drawing.Point(16, 20);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(34, 13);
             this.labelStatus.TabIndex = 2;
             this.labelStatus.Text = "Stats:";
             // 
-            // labelCOMPort
-            // 
-            this.labelCOMPort.AutoSize = true;
-            this.labelCOMPort.Location = new System.Drawing.Point(161, 22);
-            this.labelCOMPort.Name = "labelCOMPort";
-            this.labelCOMPort.Size = new System.Drawing.Size(53, 13);
-            this.labelCOMPort.TabIndex = 1;
-            this.labelCOMPort.Text = "COM Port";
-            // 
-            // comboBoxCOM
-            // 
-            this.comboBoxCOM.FormattingEnabled = true;
-            this.comboBoxCOM.Location = new System.Drawing.Point(220, 19);
-            this.comboBoxCOM.Name = "comboBoxCOM";
-            this.comboBoxCOM.Size = new System.Drawing.Size(83, 21);
-            this.comboBoxCOM.TabIndex = 0;
-            this.comboBoxCOM.SelectedIndexChanged += new System.EventHandler(this.comboBoxCOM_SelectedIndexChanged);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.time_Tick);
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.BaudRate = 115200;
-            this.serialPort1.RtsEnable = true;
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_tick_configData);
             // 
             // FormBRWProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(702, 430);
+            this.ClientSize = new System.Drawing.Size(696, 489);
             this.Controls.Add(this.groupBoxForce);
             this.Controls.Add(this.groupBoxEffects);
             this.Controls.Add(this.groupBoxStatus);
             this.Controls.Add(this.groupBox3);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(718, 469);
-            this.MinimumSize = new System.Drawing.Size(718, 469);
+            this.MaximumSize = new System.Drawing.Size(712, 600);
+            this.MinimumSize = new System.Drawing.Size(712, 460);
             this.Name = "FormBRWProfile";
             this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -743,6 +741,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotation)).EndInit();
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWheel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -776,12 +775,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.GroupBox groupBoxStatus;
-        private System.Windows.Forms.ComboBox comboBoxCOM;
         private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.Label labelCOMPort;
         private System.Windows.Forms.Label labelStatusValue;
         private System.Windows.Forms.Timer timer1;
-        private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label labelSine;
         private System.Windows.Forms.TrackBar trackBarSine;
         private System.Windows.Forms.TrackBar trackBarSpring;
@@ -804,6 +800,7 @@
         private System.Windows.Forms.Label labelFirmwareVersion;
         private System.Windows.Forms.Label labelProfileVersion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureWheel;
     }
 }
 

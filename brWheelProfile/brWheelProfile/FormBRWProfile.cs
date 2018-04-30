@@ -8,16 +8,22 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO.Ports;
-
+using System.Net;
+using System.Xml;
+using System.Drawing.Drawing2D;
+using System.Threading;
+//using System.Threading;
 
 
 namespace brWheelProfile
 {
     public partial class FormBRWProfile : Form
     {
-        string VERSION = "0.9";
+        string VERSION = "2.0";
         string RxString;
         string fwVersion = null;
+
+        int countTick = 0;
 
         int lastRotationValue = 0;
         int lastGainValue=0;
@@ -34,10 +40,39 @@ namespace brWheelProfile
         int calibrateValue = 0;
         int centerValue = 0;
 
+        HID_demo HID = new HID_demo();
+        USB_ConfigReport configData = new USB_ConfigReport();
+        USB_DataReport joystickData = new USB_DataReport();
         public FormBRWProfile()
         {
             InitializeComponent();
             labelProfileVersion.Text = VERSION;
+            labelStatusValue.Text = "Disconnected";
+
+            HID.find();
+            HID.connect();
+
+            /*String url = "https://raw.githubusercontent.com/fernandoigor/BRWheel-Profile/master/VERSION.md";
+            using (WebClient client = new WebClient())
+            {
+                string rawXml = client.DownloadString(url);
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(rawXml);
+                Console.WriteLine(xmlDoc);
+            }*/
+
+            
+            //Form1 temp = new Form1();
+            //temp.Show();
+            //temp.Visible = false;
+
+        }
+        private void FormBRWProfile_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Desconectar
+            timer1.Stop();
+            Thread.Sleep(200);
+            HID.close();
         }
 
         private void trackBarRotation_Scroll(object sender, EventArgs e)
@@ -97,6 +132,8 @@ namespace brWheelProfile
                 labelMinimalValue.Text = ""+trackBarMinimal.Value;
             else
                 trackBarMinimal.Value = trackBarMaximum.Value - 1;
+
+            //Console.WriteLine(trackBarMinimal.Value);
         }
 
         private void trackBarMaximum_Scroll(object sender, EventArgs e)
@@ -112,207 +149,229 @@ namespace brWheelProfile
             Process.Start("www.facebook.com/fernandoigorr");
         }
 
-        
-
         private void pictureBoxBRW_Clicked(object sender, EventArgs e)
         {
         }
 
-        private void refreshListCOMs()
+        private void timer1_tick_configData(object sender, EventArgs e)
         {
-            int i;
-            bool quantDiferente; //flag para sinalizar que a quantidade de portas mudou
-
-            i = 1;
-            quantDiferente = false;
-            //se a quantidade de portas mudou
-            if (serialPort1.IsOpen == false)
+            if (HID.connected)
             {
-                if (comboBoxCOM.Items.Count == SerialPort.GetPortNames().Length + 1)
+                labelStatusValue.Text = "Connected";
+                labelStatusValue.ForeColor = Color.FromArgb(255, 0, 250, 0);
+                /*foreach (byte i in HID.dataReceived)
                 {
-                    foreach (string s in SerialPort.GetPortNames())
+                    Console.Write(i + " ");
+                }*/
+                //System.Threading.Thread.Sleep(5000);
+                if (checkValues())
+                {
+                    //modificou as infos, precisa enviar
+                    //Console.WriteLine("modifcou");
+                    if (configData.Info < 255)
+                        configData.Info = 1;    // Set estado de sem ação.
+                }
+                if (configData.Info == 255)
+                {
+                    if (HID.configReceived[0] == 0) // equivalente a nao definido
                     {
-                        if (comboBoxCOM.Items[i].Equals(s) == false)
-                        {
-                            quantDiferente = true;
-                        }
-                        i++;
+                        activeTrackBar(false);
+                        configData.ReportId = 241; // 0xF1
+                        //pegar os parametros do volante ou do profile?
+                        //iniciando sem valores
+                        HID.sendData(configData);
                     }
+                    else
+                    {
+                        activeTrackBar(true);
+                        configData = HID.decodeConfigReport();
+                        configData.Info = 0;
+                        // refresh layout bar
+                        fwVersion = Convert.ToString(configData.Version/100.0);
+                        labelFirmwareVersion.Text = fwVersion;
+                        refreshValues();
+                    }
+
                 }
-                else
+                else if (configData.Info == 1)
                 {
-                    quantDiferente = true;
+                    //configData enviado para joystick
+                    HID.sendData(configData);
+                    configData.Info = 2;
                 }
-            }
-
-            //Se não foi detectado diferença
-            if (quantDiferente == false)
-            {
-                return;                     //retorna
-            }
-
-            //limpa comboBox
-            comboBoxCOM.Items.Clear();
-            comboBoxCOM.Items.Add("None");
-            //adiciona todas as COM diponíveis na lista
-            foreach (string s in SerialPort.GetPortNames())
-            {
-                comboBoxCOM.Items.Add(s);
-            }
-            //seleciona a primeira posição da lista
-            comboBoxCOM.SelectedIndex = 0;
-        }
-        private void FormBRWProfile_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (serialPort1.IsOpen == true)  // se porta aberta
-                serialPort1.Close();         //fecha a porta
-        }
-        private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (serialPort1.IsOpen == false)
-            {
-                try
+                else if (configData.Info == 2)
                 {
-                    serialPort1.PortName = comboBoxCOM.Items[comboBoxCOM.SelectedIndex].ToString();
-                    serialPort1.Open();
+                    // precisa verificar se os valores são iguais ao atual do profile, se não set Info = 1
+                    if (HID.configReceived != null)
+                    {
+                        //byte[] configTemp = HID.dataReceived;//HID.decodeConfigReport();
+                        if (HID.isEqual(HID.configReceived, HID.encodeConfigReport(configData)))
+                        {
+                            //configData = HID.decodeConfigReport();
+                            USB_ConfigReport temp = HID.decodeConfigReport();
+                            configData.Calibrate = 0;
+                            configData.Centralize = 0;
 
-                }
-                catch
-                {
-                    return;
+                            configData.Info = 0;
+                        }
+                        else
+                        {
+                            configData.Info = 1;
+                        }
+                    }
 
+                    //configData recebida do joystick
                 }
-                if (serialPort1.IsOpen)
-                {
-                    labelStatusValue.Text = "Connected";
-                    labelStatusValue.ForeColor = Color.Green;
-                    serialPort1.Write("v");
-                    //comboBoxCOM.Enabled = false;
+                //HID.sendData();
 
-                }
             }
             else
             {
-
-                try
-                {
-                    serialPort1.Close();
-                    //comboBoxCOM.Enabled = true;
-                    labelStatusValue.Text = "Unknow";
-                    labelStatusValue.ForeColor = Color.Red;
-                    fwVersion = null;
-                    labelFirmwareVersion.Text = "Unknow";
-                }
-                catch
-                {
-                    return;
-                }
-
+                labelStatusValue.Text = "Disconnected";
+                labelStatusValue.ForeColor = Color.FromArgb(255, 255, 0, 0);
+                HID.find();
+                HID.connect();
             }
+            joystickData = HID.decodeDataReport();
+            refreshJoystickValues();
+            //Console.WriteLine("1tick " + configData.Info + " " + test[0] + " " + test[1]);
+
+            //HID.sendData(configData);
+            /*
+            //Image img = Image.FromFile("pictureWheel3.jpg");
+            Image img = brWheelProfile.Properties.Resources.pictureWheelDisplay;
+            Graphics gfx = Graphics.FromImage(img);
+            gfx.TranslateTransform((float)img.Width / 2, (float)img.Height / 2);
+            gfx.RotateTransform(countTick);
+            gfx.TranslateTransform(-(float)img.Width / 2, -(float)img.Height / 2);
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            gfx.DrawImage(img, new Point(0, 0));
+            gfx.Dispose();
+            pictureWheel.Image = img;
+            */
+            // Console.WriteLine("tick " + configData.Info);
         }
 
-        private void time_Tick(object sender, EventArgs e)
+        private bool checkValues()
         {
-            refreshListCOMs();
-            refreshValuesSerial();
-        }
+            bool different = false;
 
-        private void refreshValuesSerial()
-        {
-            if (serialPort1.IsOpen == true)
+            if (calibrateValue == 1)
             {
-                if (calibrateValue == 1)
-                {
-                    calibrateValue = 0;
-                    serialPort1.Write("r");
-                }
-                else if (centerValue == 1)
-                {
-                    centerValue = 0;
-                    serialPort1.Write("c");
-                }
-                else if (trackBarRotation.Value != lastRotationValue)
-                {
-                    lastRotationValue = trackBarRotation.Value;
-                    serialPort1.Write("g" + lastRotationValue);
-                    Properties.Settings.Default.Rotation = lastRotationValue;
-                }
-                else if (trackBarGain.Value != lastGainValue)
-                {
-                    lastGainValue = trackBarGain.Value;
-                    serialPort1.Write("fg" + lastGainValue);
-                    Properties.Settings.Default.Gain = lastGainValue;
-                }
-                else if (trackBarConstant.Value != lastConstantValue)
-                {
-                    lastConstantValue = trackBarConstant.Value;
-                    serialPort1.Write("fc" + lastConstantValue);
-                    Properties.Settings.Default.Constant = lastConstantValue;
-                }
-                else if (trackBarFriction.Value != lastFrictionValue)
-                {
-                    lastFrictionValue = trackBarFriction.Value;
-                    serialPort1.Write("ff" + lastFrictionValue);
-                    Properties.Settings.Default.Friction = lastFrictionValue;
-                }
-                else if (trackBarDamper.Value != lastDamperValue)
-                {
-                    lastDamperValue = trackBarDamper.Value;
-                    serialPort1.Write("fd" + lastDamperValue);
-                    Properties.Settings.Default.Damper = lastDamperValue;
-                }
-                else if (trackBarInertia.Value != lastInertiaValue)
-                {
-                    lastInertiaValue = trackBarInertia.Value;
-                    serialPort1.Write("fi" + lastInertiaValue);
-                    Properties.Settings.Default.Inertia = lastInertiaValue;
-                }
-                else if (trackBarSpring.Value != lastSpringValue)
-                {
-                    lastSpringValue = trackBarSpring.Value;
-                    serialPort1.Write("fm" + lastSpringValue);
-                    Properties.Settings.Default.Spring = lastSpringValue;
-                }
-                else if (trackBarSine.Value != lastSineValue)
-                {
-                    lastSineValue = trackBarSine.Value;
-                    serialPort1.Write("fs" + lastSineValue);
-                    Properties.Settings.Default.Sine = lastSineValue;
-                }
-                else if (trackBarDesktop.Value != lastDesktopValue)
-                {
-                    lastDesktopValue = trackBarDesktop.Value;
-                    serialPort1.Write("fa" + lastDesktopValue);
-                    Properties.Settings.Default.Desktop = lastDesktopValue;
-                }
-                else if (trackBarStop.Value != lastStopValue)
-                {
-                    lastStopValue = trackBarStop.Value;
-                    serialPort1.Write("fb" + lastStopValue);
-                    Properties.Settings.Default.Stop = lastStopValue;
-                }
-                else if (trackBarMinimal.Value != lastMinimalValue)
-                {
-                    lastMinimalValue = trackBarMinimal.Value;
-                    serialPort1.Write("fj" + lastMinimalValue);
-                    Properties.Settings.Default.Minimal = lastMinimalValue;
-                }
-                else if (trackBarMaximum.Value != lastMaximumValue)
-                {
-                    lastMaximumValue = trackBarMaximum.Value;
-                    serialPort1.Write("fk" + lastMaximumValue);
-                    Properties.Settings.Default.Maximum = lastMaximumValue;
-                }
-                Properties.Settings.Default.Save();
+                calibrateValue = 0;
+                //serialPort1.Write("r");
+                configData.Calibrate = 1;
+                different = true;
             }
+            else if (centerValue == 1)
+            {
+                centerValue = 0;
+                //serialPort1.Write("c");
+                configData.Centralize = 1;
+                different = true;
+            }
+            else if (trackBarRotation.Value != lastRotationValue)
+            {
+                lastRotationValue = trackBarRotation.Value;
+                configData.Rotation = Convert.ToUInt16(lastRotationValue);
+                //serialPort1.Write("g" + lastRotationValue);
+                //Properties.Settings.Default.Rotation = lastRotationValue;
+                different = true;
+            }
+            else if (trackBarGain.Value != lastGainValue)
+            {
+                lastGainValue = trackBarGain.Value;
+                configData.GeneralGain = Convert.ToByte(lastGainValue);
+                //serialPort1.Write("fg" + lastGainValue);
+                //Properties.Settings.Default.Gain = lastGainValue;
+                different = true;
+            }
+            else if (trackBarConstant.Value != lastConstantValue)
+            {
+                lastConstantValue = trackBarConstant.Value;
+                configData.ConstantGain = Convert.ToByte(lastConstantValue);
+                //serialPort1.Write("fc" + lastConstantValue);
+                //Properties.Settings.Default.Constant = lastConstantValue;
+                different = true;
+            }
+            else if (trackBarFriction.Value != lastFrictionValue)
+            {
+                lastFrictionValue = trackBarFriction.Value;
+                configData.FrictionGain = Convert.ToByte(lastFrictionValue);
+                //serialPort1.Write("ff" + lastFrictionValue);
+                //Properties.Settings.Default.Friction = lastFrictionValue;
+                different = true;
+            }
+            else if (trackBarDamper.Value != lastDamperValue)
+            {
+                lastDamperValue = trackBarDamper.Value;
+                configData.DamperGain = Convert.ToByte(lastDamperValue);
+                //serialPort1.Write("fd" + lastDamperValue);
+                //Properties.Settings.Default.Damper = lastDamperValue;
+                different = true;
+            }
+            else if (trackBarInertia.Value != lastInertiaValue)
+            {
+                lastInertiaValue = trackBarInertia.Value;
+                configData.InertiaGain = Convert.ToByte(lastInertiaValue);
+                //serialPort1.Write("fi" + lastInertiaValue);
+                //Properties.Settings.Default.Inertia = lastInertiaValue;
+                different = true;
+            }
+            else if (trackBarSpring.Value != lastSpringValue)
+            {
+                lastSpringValue = trackBarSpring.Value;
+                configData.SpringGain = Convert.ToByte(lastSpringValue);
+                //serialPort1.Write("fm" + lastSpringValue);
+                //Properties.Settings.Default.Spring = lastSpringValue;
+                different = true;
+            }
+            else if (trackBarSine.Value != lastSineValue)
+            {
+                lastSineValue = trackBarSine.Value;
+                configData.SineGain = Convert.ToByte(lastSineValue);
+                //serialPort1.Write("fs" + lastSineValue);
+                //Properties.Settings.Default.Sine = lastSineValue;
+                different = true;
+            }
+            else if (trackBarDesktop.Value != lastDesktopValue)
+            {
+                lastDesktopValue = trackBarDesktop.Value;
+                configData.CenterGain = Convert.ToByte(lastDesktopValue);
+                //serialPort1.Write("fa" + lastDesktopValue);
+                //Properties.Settings.Default.Desktop = lastDesktopValue;
+                different = true;
+            }
+            else if (trackBarStop.Value != lastStopValue)
+            {
+                lastStopValue = trackBarStop.Value;
+                configData.StopGain = Convert.ToByte(lastStopValue);
+                //serialPort1.Write("fb" + lastStopValue);
+                //Properties.Settings.Default.Stop = lastStopValue;
+                different = true;
+            }
+            else if (trackBarMinimal.Value != lastMinimalValue)
+            {
+                lastMinimalValue = trackBarMinimal.Value;
+                
+                configData.MinForce = Convert.ToUInt16(lastMinimalValue);
+                //serialPort1.Write("fj" + lastMinimalValue);
+                //Properties.Settings.Default.Minimal = lastMinimalValue;
+                different = true;
+            }
+            else if (trackBarMaximum.Value != lastMaximumValue)
+            {
+                lastMaximumValue = trackBarMaximum.Value;
+                configData.MaxForce = Convert.ToUInt16(lastMaximumValue);
+                //serialPort1.Write("fk" + lastMaximumValue);
+                //Properties.Settings.Default.Maximum = lastMaximumValue;
+                different = true;
+            }
+            return different;
         }
+      
 
 
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            RxString = serialPort1.ReadExisting();          // Available
-            this.Invoke(new EventHandler(changesReceived));
-        }
         private void changesReceived(object sender, EventArgs e)
         {
             String temp = RxString.Substring(0, 12);
@@ -327,17 +386,20 @@ namespace brWheelProfile
 
         private void buttonCalibrate_Click(object sender, EventArgs e)
         {
-            calibrateValue = 1;
+            //calibrateValue = 1;
         }
 
         private void buttonCenter_Click(object sender, EventArgs e)
         {
-            centerValue = 1;
+            //centerValue = 1;
         }
 
         private void form_Load(object sender, EventArgs e)
         {
-            labelGainValue.Text = (trackBarGain.Value = Properties.Settings.Default.Gain) + " %";
+
+            configData.Info = 255;
+            activeTrackBar(false);
+            /*labelGainValue.Text = (trackBarGain.Value = Properties.Settings.Default.Gain) + " %";
             labelConstantValue.Text = (trackBarConstant.Value = Properties.Settings.Default.Constant) + " %";
             labelFrictionValue.Text = (trackBarFriction.Value = Properties.Settings.Default.Friction) + " %";
             labelDamperValue.Text = (trackBarDamper.Value = Properties.Settings.Default.Damper) + " %";
@@ -350,8 +412,60 @@ namespace brWheelProfile
             labelMinimalValue.Text = (trackBarMinimal.Value = Properties.Settings.Default.Minimal) + "";
             labelMaximumValue.Text = (trackBarMaximum.Value = Properties.Settings.Default.Maximum) + "";
 
-            labelRotationValue.Text = (trackBarRotation.Value = Properties.Settings.Default.Rotation) + " °";
+            labelRotationValue.Text = (trackBarRotation.Value = Properties.Settings.Default.Rotation) + " °";*/
 
+        }
+        private void refreshValues()
+        {
+            trackBarRotation.Value = configData.Rotation;
+            trackBarGain.Value = configData.GeneralGain;
+            trackBarConstant.Value = configData.ConstantGain;
+            trackBarFriction.Value = configData.FrictionGain;
+            trackBarDamper.Value = configData.DamperGain;
+            trackBarInertia.Value = configData.InertiaGain;
+            trackBarSpring.Value = configData.SpringGain;
+            trackBarSine.Value = configData.SineGain;
+            trackBarDesktop.Value = configData.CenterGain;
+            trackBarStop.Value = configData.StopGain;
+            trackBarMinimal.Value = configData.MinForce;
+            trackBarMaximum.Value = configData.MaxForce;
+
+        }
+        private void activeTrackBar(bool active)
+        {
+            trackBarRotation.Enabled = active;
+            trackBarGain.Enabled = active;
+            trackBarConstant.Enabled = active;
+            trackBarFriction.Enabled = active;
+            trackBarDamper.Enabled = active;
+            trackBarInertia.Enabled = active;
+            trackBarSpring.Enabled = active;
+            trackBarSine.Enabled = active;
+            trackBarDesktop.Enabled = active;
+            trackBarStop.Enabled = active;
+            trackBarMinimal.Enabled = active;
+            trackBarMaximum.Enabled = active;
+
+            buttonCenterWheel.Enabled = active;
+            buttonCalibrate.Enabled = active;
+        }
+        private void refreshJoystickValues()
+        {
+            int rotation = (joystickData.X * configData.Rotation) / 65536;
+            Image img = brWheelProfile.Properties.Resources.pictureWheelDisplay;
+            Graphics gfx = Graphics.FromImage(img);
+            gfx.TranslateTransform((float)img.Width / 2, (float)img.Height / 2);
+            gfx.RotateTransform(rotation);
+            gfx.TranslateTransform(-(float)img.Width / 2, -(float)img.Height / 2);
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            gfx.DrawImage(img, new Point(0, 0));
+            gfx.Dispose();
+            pictureWheel.Image = img;
+        }
+
+        private void ClickedCloseForm(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -53,10 +53,10 @@
     <ApplicationIcon>brico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5064C1D37A6184A3D78B86B07F9E0BD178B65C45</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8F65297D31949E74D103DBF5556274E973ABC9BE</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>brWheelProfile_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>brWheelProfile_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -64,9 +64,16 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +90,8 @@
     <Compile Include="FormBRWProfile.Designer.cs">
       <DependentUpon>FormBRWProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="HID.cs" />
+    <Compile Include="HIDInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBRWProfile.resx">
@@ -96,8 +105,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="brWheelProfile_1_TemporaryKey.pfx" />
     <None Include="brWheelProfile_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +128,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\pictureWheelDisplay.jpg" />
     <Content Include="brico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

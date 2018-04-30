@@ -22,6 +22,20 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+
+brWheelProfile/brWheelProfile/bin/[Dd]ebug
+/brWheelProfile/brWheelProfile/bin/[Dd]ebug/*
+/brWheelProfile/brWheelProfile/bin/[Dd]ebug/*.*
+
+brWheelProfile/brWheelProfile/obj/[Dd]ebug
+/brWheelProfile/brWheelProfile/obj/[Dd]ebug/*
+/brWheelProfile/brWheelProfile/obj/[Dd]ebug/*.*
+
+brWheelProfile/brWheelProfile/obj/[Rr]elease
+/brWheelProfile/brWheelProfile/obj/[Rr]elease/*
+/brWheelProfile/brWheelProfile/obj/[Rr]elease/*.*
+
+
 # Visual Studio 2015 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
