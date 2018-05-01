@@ -48,6 +48,7 @@ namespace brWheelProfile
             InitializeComponent();
             labelProfileVersion.Text = VERSION;
             labelStatusValue.Text = "Disconnected";
+            labelFirmwareVersion.Text = "0.0";
 
             HID.find();
             HID.connect();
@@ -376,28 +377,6 @@ namespace brWheelProfile
       
 
 
-        private void changesReceived(object sender, EventArgs e)
-        {
-            String temp = RxString.Substring(0, 12);
-            if(temp == "BRW Version-")
-                {
-                double numberVersion = Convert.ToDouble(RxString.Substring(12))/100.0;
-                //Console.WriteLine(temp);
-                fwVersion = Convert.ToString(numberVersion);
-                labelFirmwareVersion.Text = "BRW V " + fwVersion;
-                }
-        }
-
-        private void buttonCalibrate_Click(object sender, EventArgs e)
-        {
-            //calibrateValue = 1;
-        }
-
-        private void buttonCenter_Click(object sender, EventArgs e)
-        {
-            //centerValue = 1;
-        }
-
         private void form_Load(object sender, EventArgs e)
         {
 
@@ -450,13 +429,11 @@ namespace brWheelProfile
             trackBarMinimal.Enabled = active;
             trackBarMaximum.Enabled = active;
 
-            buttonCenterWheel.Enabled = active;
-            buttonCalibrate.Enabled = active;
         }
         private void refreshJoystickValues()
         {
             int rotation = (joystickData.X * configData.Rotation) / 65536;
-            Image img = brWheelProfile.Properties.Resources.BRWheelJoy;
+            Image img = brWheelProfile.Properties.Resources.pictureWheel;
 
             Graphics gfx = Graphics.FromImage(img);
             gfx.TranslateTransform((float)img.Width / 2, (float)img.Height / 2);
@@ -473,6 +450,38 @@ namespace brWheelProfile
             Environment.Exit(0);
         }
 
-        
+        private void btnCloseHover(object sender, EventArgs e)
+        {
+            boxClose.Image = brWheelProfile.Properties.Resources.btnXHover;
+        }
+
+        private void btnCloseLeave(object sender, EventArgs e)
+        {
+            boxClose.Image = brWheelProfile.Properties.Resources.btnX;
+        }
+
+        private void btnCloseClick(object sender, EventArgs e)
+        {
+            boxClose.Image = brWheelProfile.Properties.Resources.btnXClick;
+            Environment.Exit(0);
+        }
+
+        private void btnMinimizeHover(object sender, EventArgs e)
+        {
+            boxMinimize.Image = brWheelProfile.Properties.Resources.btn_Hover;
+        }
+
+        private void btnMinimizeLeave(object sender, EventArgs e)
+        {
+            boxMinimize.Image = brWheelProfile.Properties.Resources.btn_;
+        }
+
+        private void btnMinimizeClick(object sender, EventArgs e)
+        {
+            boxMinimize.Image = brWheelProfile.Properties.Resources.btn_Click;
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
     }
 }

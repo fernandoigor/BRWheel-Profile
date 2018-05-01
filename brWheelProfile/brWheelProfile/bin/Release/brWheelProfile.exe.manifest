@@ -43,24 +43,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="brWheelProfile.exe" size="925648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="brWheelProfile.exe" size="1151440">
       <assemblyIdentity name="brWheelProfile" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+f+vV8dGyW9wd62lIco3CowFkOs=</dsig:DigestValue>
+        <dsig:DigestValue>+K9F99k5MLpva6m0/F6r6V+CaLI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="brico.ico" size="370070">
+  <file name="brico.ico" size="48825">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ArOlounOqr2hptJylrfX7Sjrgqg=</dsig:DigestValue>
+      <dsig:DigestValue>Bg4bMoABFVhjGHWkVwUy7AOAE9c=</dsig:DigestValue>
     </hash>
   </file>
   <file name="brWheelProfile.exe.config" size="122">

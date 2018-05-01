@@ -96,6 +96,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBRWProfile.resx">
       <DependentUpon>FormBRWProfile.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +130,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="brico.ico" />
+    <None Include="Resources\brw.ico" />
+    <None Include="Resources\brw.png" />
+    <None Include="Resources\bg.jpg" />
+    <None Include="Resources\btnActive.png" />
+    <None Include="Resources\btn.png" />
+    <None Include="Resources\btnXHover.png" />
+    <None Include="Resources\btnXClick.png" />
+    <None Include="Resources\btnX.png" />
+    <None Include="Resources\btn-Hover.png" />
+    <None Include="Resources\btn-Click.png" />
+    <None Include="Resources\btn-.png" />
     <None Include="Resources\BRWheelJoy.jpg" />
     <None Include="Resources\BRWheelDisplay.jpg" />
     <None Include="Resources\pictureWheel.png" />
