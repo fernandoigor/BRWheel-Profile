@@ -173,6 +173,16 @@ namespace brWheelProfile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap labelHShifter {
+            get {
+                object obj = ResourceManager.GetObject("labelHShifter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pictureWheel {
             get {
                 object obj = ResourceManager.GetObject("pictureWheel", resourceCulture);

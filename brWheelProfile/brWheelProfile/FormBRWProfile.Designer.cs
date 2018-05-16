@@ -78,40 +78,50 @@
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.btn1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.btn2 = new System.Windows.Forms.Label();
+            this.btn3 = new System.Windows.Forms.Label();
+            this.btn4 = new System.Windows.Forms.Label();
+            this.btn8 = new System.Windows.Forms.Label();
+            this.btn7 = new System.Windows.Forms.Label();
+            this.btn6 = new System.Windows.Forms.Label();
+            this.btn5 = new System.Windows.Forms.Label();
+            this.btn16 = new System.Windows.Forms.Label();
+            this.btn15 = new System.Windows.Forms.Label();
+            this.btn14 = new System.Windows.Forms.Label();
+            this.btn13 = new System.Windows.Forms.Label();
+            this.btn12 = new System.Windows.Forms.Label();
+            this.btn11 = new System.Windows.Forms.Label();
+            this.btn10 = new System.Windows.Forms.Label();
+            this.btn9 = new System.Windows.Forms.Label();
+            this.btn24 = new System.Windows.Forms.Label();
+            this.btn23 = new System.Windows.Forms.Label();
+            this.btn22 = new System.Windows.Forms.Label();
+            this.btn21 = new System.Windows.Forms.Label();
+            this.btn20 = new System.Windows.Forms.Label();
+            this.btn19 = new System.Windows.Forms.Label();
+            this.btn18 = new System.Windows.Forms.Label();
+            this.btn17 = new System.Windows.Forms.Label();
+            this.btn32 = new System.Windows.Forms.Label();
+            this.btn31 = new System.Windows.Forms.Label();
+            this.btn30 = new System.Windows.Forms.Label();
+            this.btn29 = new System.Windows.Forms.Label();
+            this.btn28 = new System.Windows.Forms.Label();
+            this.btn27 = new System.Windows.Forms.Label();
+            this.btn26 = new System.Windows.Forms.Label();
+            this.btn25 = new System.Windows.Forms.Label();
+            this.panelBGPedal1 = new System.Windows.Forms.Panel();
+            this.panelBGPedal2 = new System.Windows.Forms.Panel();
+            this.panelBGPedal3 = new System.Windows.Forms.Panel();
+            this.panelPedal3 = new System.Windows.Forms.Panel();
+            this.panelPedal2 = new System.Windows.Forms.Panel();
+            this.panelPedal1 = new System.Windows.Forms.Panel();
             this.boxMinimize = new System.Windows.Forms.PictureBox();
             this.boxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxBRW = new System.Windows.Forms.PictureBox();
+            this.labelPedal1 = new System.Windows.Forms.Label();
+            this.labelPedal2 = new System.Windows.Forms.Label();
+            this.labelPedal3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpring)).BeginInit();
@@ -128,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBRW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // trackBarGain
@@ -601,9 +612,10 @@
             this.labelFirmwareVersion.ForeColor = System.Drawing.Color.Aqua;
             this.labelFirmwareVersion.Location = new System.Drawing.Point(281, 275);
             this.labelFirmwareVersion.Name = "labelFirmwareVersion";
-            this.labelFirmwareVersion.Size = new System.Drawing.Size(41, 11);
+            this.labelFirmwareVersion.Size = new System.Drawing.Size(29, 11);
             this.labelFirmwareVersion.TabIndex = 5;
-            this.labelFirmwareVersion.Text = "Unknow";
+            this.labelFirmwareVersion.Text = "0.00";
+            this.labelFirmwareVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelFirmware
             // 
@@ -616,13 +628,14 @@
             this.labelFirmware.Size = new System.Drawing.Size(59, 11);
             this.labelFirmware.TabIndex = 4;
             this.labelFirmware.Text = "Firmware:";
+            this.labelFirmware.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelStatusValue
             // 
             this.labelStatusValue.AutoSize = true;
             this.labelStatusValue.BackColor = System.Drawing.Color.Transparent;
             this.labelStatusValue.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelStatusValue.ForeColor = System.Drawing.Color.Red;
+            this.labelStatusValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.labelStatusValue.Location = new System.Drawing.Point(64, 275);
             this.labelStatusValue.Name = "labelStatusValue";
             this.labelStatusValue.Size = new System.Drawing.Size(49, 14);
@@ -661,6 +674,7 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Unispace", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -671,7 +685,7 @@
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "facebook";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(150)))));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // labelProfileVersion
@@ -700,6 +714,7 @@
             // 
             // linkLabel2
             // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Unispace", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -715,419 +730,467 @@
             // 
             // btn1
             // 
-            this.btn1.AutoSize = true;
-            this.btn1.BackColor = System.Drawing.Color.Teal;
+            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.btn1.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
             this.btn1.Location = new System.Drawing.Point(160, 325);
             this.btn1.MaximumSize = new System.Drawing.Size(50, 50);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(9, 10);
+            this.btn1.Size = new System.Drawing.Size(15, 10);
             this.btn1.TabIndex = 26;
             this.btn1.Text = "1";
+            this.btn1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // btn2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Teal;
-            this.label2.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(179, 325);
-            this.label2.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(9, 10);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "2";
+            this.btn2.BackColor = System.Drawing.Color.Teal;
+            this.btn2.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(179, 325);
+            this.btn2.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(15, 10);
+            this.btn2.TabIndex = 27;
+            this.btn2.Text = "2";
+            this.btn2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // btn3
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Teal;
-            this.label4.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(198, 325);
-            this.label4.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(9, 10);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "3";
+            this.btn3.BackColor = System.Drawing.Color.Teal;
+            this.btn3.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(198, 325);
+            this.btn3.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(15, 10);
+            this.btn3.TabIndex = 28;
+            this.btn3.Text = "3";
+            this.btn3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // btn4
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Teal;
-            this.label5.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(217, 325);
-            this.label5.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(9, 10);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "4";
+            this.btn4.BackColor = System.Drawing.Color.Teal;
+            this.btn4.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.ForeColor = System.Drawing.Color.White;
+            this.btn4.Location = new System.Drawing.Point(217, 325);
+            this.btn4.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(15, 10);
+            this.btn4.TabIndex = 29;
+            this.btn4.Text = "4";
+            this.btn4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // btn8
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Teal;
-            this.label6.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(293, 325);
-            this.label6.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(9, 10);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "8";
+            this.btn8.BackColor = System.Drawing.Color.Teal;
+            this.btn8.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn8.ForeColor = System.Drawing.Color.White;
+            this.btn8.Location = new System.Drawing.Point(293, 325);
+            this.btn8.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(15, 10);
+            this.btn8.TabIndex = 33;
+            this.btn8.Text = "8";
+            this.btn8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // btn7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Teal;
-            this.label7.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(274, 325);
-            this.label7.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(9, 10);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "7";
+            this.btn7.BackColor = System.Drawing.Color.Teal;
+            this.btn7.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7.ForeColor = System.Drawing.Color.White;
+            this.btn7.Location = new System.Drawing.Point(274, 325);
+            this.btn7.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(15, 10);
+            this.btn7.TabIndex = 32;
+            this.btn7.Text = "7";
+            this.btn7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // btn6
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Teal;
-            this.label8.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(255, 325);
-            this.label8.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(9, 10);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "6";
+            this.btn6.BackColor = System.Drawing.Color.Teal;
+            this.btn6.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn6.ForeColor = System.Drawing.Color.White;
+            this.btn6.Location = new System.Drawing.Point(255, 325);
+            this.btn6.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(15, 10);
+            this.btn6.TabIndex = 31;
+            this.btn6.Text = "6";
+            this.btn6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // btn5
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Teal;
-            this.label9.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(236, 325);
-            this.label9.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(9, 10);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "5";
+            this.btn5.BackColor = System.Drawing.Color.Teal;
+            this.btn5.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5.ForeColor = System.Drawing.Color.White;
+            this.btn5.Location = new System.Drawing.Point(236, 325);
+            this.btn5.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(15, 10);
+            this.btn5.TabIndex = 30;
+            this.btn5.Text = "5";
+            this.btn5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // btn16
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Teal;
-            this.label10.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(293, 344);
-            this.label10.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 10);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "16";
+            this.btn16.BackColor = System.Drawing.Color.Teal;
+            this.btn16.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn16.ForeColor = System.Drawing.Color.White;
+            this.btn16.Location = new System.Drawing.Point(293, 344);
+            this.btn16.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn16.Name = "btn16";
+            this.btn16.Size = new System.Drawing.Size(15, 10);
+            this.btn16.TabIndex = 41;
+            this.btn16.Text = "16";
+            this.btn16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // btn15
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Teal;
-            this.label11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(274, 344);
-            this.label11.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 10);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "15";
+            this.btn15.BackColor = System.Drawing.Color.Teal;
+            this.btn15.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn15.ForeColor = System.Drawing.Color.White;
+            this.btn15.Location = new System.Drawing.Point(274, 344);
+            this.btn15.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(15, 10);
+            this.btn15.TabIndex = 40;
+            this.btn15.Text = "15";
+            this.btn15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // btn14
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Teal;
-            this.label12.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(255, 344);
-            this.label12.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 10);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "14";
+            this.btn14.BackColor = System.Drawing.Color.Teal;
+            this.btn14.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn14.ForeColor = System.Drawing.Color.White;
+            this.btn14.Location = new System.Drawing.Point(255, 344);
+            this.btn14.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(15, 10);
+            this.btn14.TabIndex = 39;
+            this.btn14.Text = "14";
+            this.btn14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // btn13
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Teal;
-            this.label14.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(236, 344);
-            this.label14.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(13, 10);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "13";
+            this.btn13.BackColor = System.Drawing.Color.Teal;
+            this.btn13.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn13.ForeColor = System.Drawing.Color.White;
+            this.btn13.Location = new System.Drawing.Point(236, 344);
+            this.btn13.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(15, 10);
+            this.btn13.TabIndex = 38;
+            this.btn13.Text = "13";
+            this.btn13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // btn12
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Teal;
-            this.label15.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(217, 344);
-            this.label15.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 10);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "12";
+            this.btn12.BackColor = System.Drawing.Color.Teal;
+            this.btn12.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn12.ForeColor = System.Drawing.Color.White;
+            this.btn12.Location = new System.Drawing.Point(217, 344);
+            this.btn12.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn12.Name = "btn12";
+            this.btn12.Size = new System.Drawing.Size(15, 10);
+            this.btn12.TabIndex = 37;
+            this.btn12.Text = "12";
+            this.btn12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // btn11
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Teal;
-            this.label16.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(198, 344);
-            this.label16.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(13, 10);
-            this.label16.TabIndex = 36;
-            this.label16.Text = "11";
+            this.btn11.BackColor = System.Drawing.Color.Teal;
+            this.btn11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn11.ForeColor = System.Drawing.Color.White;
+            this.btn11.Location = new System.Drawing.Point(198, 344);
+            this.btn11.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn11.Name = "btn11";
+            this.btn11.Size = new System.Drawing.Size(15, 10);
+            this.btn11.TabIndex = 36;
+            this.btn11.Text = "11";
+            this.btn11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // btn10
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Teal;
-            this.label17.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(176, 344);
-            this.label17.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 10);
-            this.label17.TabIndex = 35;
-            this.label17.Text = "10";
+            this.btn10.BackColor = System.Drawing.Color.Teal;
+            this.btn10.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn10.ForeColor = System.Drawing.Color.White;
+            this.btn10.Location = new System.Drawing.Point(179, 344);
+            this.btn10.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(15, 10);
+            this.btn10.TabIndex = 35;
+            this.btn10.Text = "10";
+            this.btn10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // btn9
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Teal;
-            this.label18.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(160, 344);
-            this.label18.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(9, 10);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "9";
+            this.btn9.BackColor = System.Drawing.Color.Teal;
+            this.btn9.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9.ForeColor = System.Drawing.Color.White;
+            this.btn9.Location = new System.Drawing.Point(160, 344);
+            this.btn9.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(15, 10);
+            this.btn9.TabIndex = 34;
+            this.btn9.Text = "9";
+            this.btn9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // btn24
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Teal;
-            this.label19.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(293, 363);
-            this.label19.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(9, 10);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "1";
+            this.btn24.BackColor = System.Drawing.Color.Teal;
+            this.btn24.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn24.ForeColor = System.Drawing.Color.White;
+            this.btn24.Location = new System.Drawing.Point(293, 363);
+            this.btn24.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn24.Name = "btn24";
+            this.btn24.Size = new System.Drawing.Size(15, 10);
+            this.btn24.TabIndex = 49;
+            this.btn24.Text = "24";
+            this.btn24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // btn23
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Teal;
-            this.label20.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(274, 363);
-            this.label20.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(9, 10);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "1";
+            this.btn23.BackColor = System.Drawing.Color.Teal;
+            this.btn23.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn23.ForeColor = System.Drawing.Color.White;
+            this.btn23.Location = new System.Drawing.Point(274, 363);
+            this.btn23.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn23.Name = "btn23";
+            this.btn23.Size = new System.Drawing.Size(15, 10);
+            this.btn23.TabIndex = 48;
+            this.btn23.Text = "23";
+            this.btn23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label21
+            // btn22
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Teal;
-            this.label21.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(255, 363);
-            this.label21.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(9, 10);
-            this.label21.TabIndex = 47;
-            this.label21.Text = "1";
+            this.btn22.BackColor = System.Drawing.Color.Teal;
+            this.btn22.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn22.ForeColor = System.Drawing.Color.White;
+            this.btn22.Location = new System.Drawing.Point(255, 363);
+            this.btn22.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn22.Name = "btn22";
+            this.btn22.Size = new System.Drawing.Size(15, 10);
+            this.btn22.TabIndex = 47;
+            this.btn22.Text = "22";
+            this.btn22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label22
+            // btn21
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Teal;
-            this.label22.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(236, 363);
-            this.label22.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(13, 10);
-            this.label22.TabIndex = 46;
-            this.label22.Text = "21";
+            this.btn21.BackColor = System.Drawing.Color.Teal;
+            this.btn21.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn21.ForeColor = System.Drawing.Color.White;
+            this.btn21.Location = new System.Drawing.Point(236, 363);
+            this.btn21.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn21.Name = "btn21";
+            this.btn21.Size = new System.Drawing.Size(15, 10);
+            this.btn21.TabIndex = 46;
+            this.btn21.Text = "21";
+            this.btn21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // btn20
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Teal;
-            this.label23.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(217, 363);
-            this.label23.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(13, 10);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "20";
+            this.btn20.BackColor = System.Drawing.Color.Teal;
+            this.btn20.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn20.ForeColor = System.Drawing.Color.White;
+            this.btn20.Location = new System.Drawing.Point(217, 363);
+            this.btn20.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn20.Name = "btn20";
+            this.btn20.Size = new System.Drawing.Size(15, 10);
+            this.btn20.TabIndex = 45;
+            this.btn20.Text = "20";
+            this.btn20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
+            // btn19
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Teal;
-            this.label24.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(198, 363);
-            this.label24.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(9, 10);
-            this.label24.TabIndex = 44;
-            this.label24.Text = "1";
+            this.btn19.BackColor = System.Drawing.Color.Teal;
+            this.btn19.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn19.ForeColor = System.Drawing.Color.White;
+            this.btn19.Location = new System.Drawing.Point(198, 363);
+            this.btn19.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn19.Name = "btn19";
+            this.btn19.Size = new System.Drawing.Size(15, 10);
+            this.btn19.TabIndex = 44;
+            this.btn19.Text = "19";
+            this.btn19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label25
+            // btn18
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Teal;
-            this.label25.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(179, 363);
-            this.label25.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(9, 10);
-            this.label25.TabIndex = 43;
-            this.label25.Text = "1";
+            this.btn18.BackColor = System.Drawing.Color.Teal;
+            this.btn18.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn18.ForeColor = System.Drawing.Color.White;
+            this.btn18.Location = new System.Drawing.Point(179, 363);
+            this.btn18.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn18.Name = "btn18";
+            this.btn18.Size = new System.Drawing.Size(15, 10);
+            this.btn18.TabIndex = 43;
+            this.btn18.Text = "18";
+            this.btn18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // btn17
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Teal;
-            this.label26.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(160, 363);
-            this.label26.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(9, 10);
-            this.label26.TabIndex = 42;
-            this.label26.Text = "1";
+            this.btn17.BackColor = System.Drawing.Color.Teal;
+            this.btn17.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn17.ForeColor = System.Drawing.Color.White;
+            this.btn17.Location = new System.Drawing.Point(160, 363);
+            this.btn17.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn17.Name = "btn17";
+            this.btn17.Size = new System.Drawing.Size(15, 10);
+            this.btn17.TabIndex = 42;
+            this.btn17.Text = "17";
+            this.btn17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // btn32
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Teal;
-            this.label27.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(293, 382);
-            this.label27.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(9, 10);
-            this.label27.TabIndex = 57;
-            this.label27.Text = "1";
+            this.btn32.BackColor = System.Drawing.Color.Teal;
+            this.btn32.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn32.ForeColor = System.Drawing.Color.White;
+            this.btn32.Location = new System.Drawing.Point(293, 382);
+            this.btn32.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn32.Name = "btn32";
+            this.btn32.Size = new System.Drawing.Size(15, 10);
+            this.btn32.TabIndex = 57;
+            this.btn32.Text = "32";
+            this.btn32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // btn31
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Teal;
-            this.label28.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(274, 382);
-            this.label28.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(9, 10);
-            this.label28.TabIndex = 56;
-            this.label28.Text = "1";
+            this.btn31.BackColor = System.Drawing.Color.Teal;
+            this.btn31.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn31.ForeColor = System.Drawing.Color.White;
+            this.btn31.Location = new System.Drawing.Point(274, 382);
+            this.btn31.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn31.Name = "btn31";
+            this.btn31.Size = new System.Drawing.Size(15, 10);
+            this.btn31.TabIndex = 56;
+            this.btn31.Text = "31";
+            this.btn31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // btn30
             // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Teal;
-            this.label29.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(255, 382);
-            this.label29.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(9, 10);
-            this.label29.TabIndex = 55;
-            this.label29.Text = "1";
+            this.btn30.BackColor = System.Drawing.Color.Teal;
+            this.btn30.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn30.ForeColor = System.Drawing.Color.White;
+            this.btn30.Location = new System.Drawing.Point(255, 382);
+            this.btn30.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn30.Name = "btn30";
+            this.btn30.Size = new System.Drawing.Size(15, 10);
+            this.btn30.TabIndex = 55;
+            this.btn30.Text = "30";
+            this.btn30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // btn29
             // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Teal;
-            this.label30.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(236, 382);
-            this.label30.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(9, 10);
-            this.label30.TabIndex = 54;
-            this.label30.Text = "1";
+            this.btn29.BackColor = System.Drawing.Color.Teal;
+            this.btn29.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn29.ForeColor = System.Drawing.Color.White;
+            this.btn29.Location = new System.Drawing.Point(236, 382);
+            this.btn29.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn29.Name = "btn29";
+            this.btn29.Size = new System.Drawing.Size(15, 10);
+            this.btn29.TabIndex = 54;
+            this.btn29.Text = "29";
+            this.btn29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // btn28
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Teal;
-            this.label31.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(217, 382);
-            this.label31.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(9, 10);
-            this.label31.TabIndex = 53;
-            this.label31.Text = "1";
+            this.btn28.BackColor = System.Drawing.Color.Teal;
+            this.btn28.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn28.ForeColor = System.Drawing.Color.White;
+            this.btn28.Location = new System.Drawing.Point(217, 382);
+            this.btn28.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn28.Name = "btn28";
+            this.btn28.Size = new System.Drawing.Size(15, 10);
+            this.btn28.TabIndex = 53;
+            this.btn28.Text = "28";
+            this.btn28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // btn27
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Teal;
-            this.label32.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(198, 382);
-            this.label32.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(9, 10);
-            this.label32.TabIndex = 52;
-            this.label32.Text = "1";
+            this.btn27.BackColor = System.Drawing.Color.Teal;
+            this.btn27.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn27.ForeColor = System.Drawing.Color.White;
+            this.btn27.Location = new System.Drawing.Point(198, 382);
+            this.btn27.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn27.Name = "btn27";
+            this.btn27.Size = new System.Drawing.Size(15, 10);
+            this.btn27.TabIndex = 52;
+            this.btn27.Text = "27";
+            this.btn27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label33
+            // btn26
             // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Teal;
-            this.label33.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(179, 382);
-            this.label33.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(9, 10);
-            this.label33.TabIndex = 51;
-            this.label33.Text = "1";
+            this.btn26.BackColor = System.Drawing.Color.Teal;
+            this.btn26.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn26.ForeColor = System.Drawing.Color.White;
+            this.btn26.Location = new System.Drawing.Point(179, 382);
+            this.btn26.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn26.Name = "btn26";
+            this.btn26.Size = new System.Drawing.Size(15, 10);
+            this.btn26.TabIndex = 51;
+            this.btn26.Text = "26";
+            this.btn26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label34
+            // btn25
             // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.Teal;
-            this.label34.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(160, 382);
-            this.label34.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(9, 10);
-            this.label34.TabIndex = 50;
-            this.label34.Text = "1";
+            this.btn25.BackColor = System.Drawing.Color.Teal;
+            this.btn25.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn25.ForeColor = System.Drawing.Color.White;
+            this.btn25.Location = new System.Drawing.Point(160, 382);
+            this.btn25.MaximumSize = new System.Drawing.Size(50, 50);
+            this.btn25.Name = "btn25";
+            this.btn25.Size = new System.Drawing.Size(15, 10);
+            this.btn25.TabIndex = 50;
+            this.btn25.Text = "25";
+            this.btn25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelBGPedal1
+            // 
+            this.panelBGPedal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelBGPedal1.Location = new System.Drawing.Point(24, 406);
+            this.panelBGPedal1.Name = "panelBGPedal1";
+            this.panelBGPedal1.Size = new System.Drawing.Size(100, 10);
+            this.panelBGPedal1.TabIndex = 59;
+            // 
+            // panelBGPedal2
+            // 
+            this.panelBGPedal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelBGPedal2.Location = new System.Drawing.Point(24, 422);
+            this.panelBGPedal2.Name = "panelBGPedal2";
+            this.panelBGPedal2.Size = new System.Drawing.Size(100, 10);
+            this.panelBGPedal2.TabIndex = 60;
+            // 
+            // panelBGPedal3
+            // 
+            this.panelBGPedal3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelBGPedal3.Location = new System.Drawing.Point(24, 438);
+            this.panelBGPedal3.Name = "panelBGPedal3";
+            this.panelBGPedal3.Size = new System.Drawing.Size(100, 10);
+            this.panelBGPedal3.TabIndex = 61;
+            // 
+            // panelPedal3
+            // 
+            this.panelPedal3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelPedal3.Location = new System.Drawing.Point(25, 440);
+            this.panelPedal3.Name = "panelPedal3";
+            this.panelPedal3.Size = new System.Drawing.Size(50, 6);
+            this.panelPedal3.TabIndex = 64;
+            // 
+            // panelPedal2
+            // 
+            this.panelPedal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelPedal2.Location = new System.Drawing.Point(25, 424);
+            this.panelPedal2.Name = "panelPedal2";
+            this.panelPedal2.Size = new System.Drawing.Size(50, 6);
+            this.panelPedal2.TabIndex = 63;
+            // 
+            // panelPedal1
+            // 
+            this.panelPedal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelPedal1.Location = new System.Drawing.Point(25, 408);
+            this.panelPedal1.Name = "panelPedal1";
+            this.panelPedal1.Size = new System.Drawing.Size(50, 6);
+            this.panelPedal1.TabIndex = 62;
             // 
             // boxMinimize
             // 
@@ -1139,6 +1202,8 @@
             this.boxMinimize.TabIndex = 25;
             this.boxMinimize.TabStop = false;
             this.boxMinimize.Click += new System.EventHandler(this.btnMinimizeClick);
+            this.boxMinimize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMinimizeClick);
+            this.boxMinimize.MouseEnter += new System.EventHandler(this.btnMinimizeHover);
             this.boxMinimize.MouseLeave += new System.EventHandler(this.btnMinimizeLeave);
             this.boxMinimize.MouseHover += new System.EventHandler(this.btnMinimizeHover);
             // 
@@ -1152,6 +1217,8 @@
             this.boxClose.TabIndex = 24;
             this.boxClose.TabStop = false;
             this.boxClose.Click += new System.EventHandler(this.btnCloseClick);
+            this.boxClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCloseClick);
+            this.boxClose.MouseEnter += new System.EventHandler(this.btnCloseHover);
             this.boxClose.MouseLeave += new System.EventHandler(this.btnCloseLeave);
             this.boxClose.MouseHover += new System.EventHandler(this.btnCloseHover);
             // 
@@ -1166,6 +1233,55 @@
             this.pictureBoxBRW.TabStop = false;
             this.pictureBoxBRW.Click += new System.EventHandler(this.pictureBoxBRW_Clicked);
             // 
+            // labelPedal1
+            // 
+            this.labelPedal1.AutoSize = true;
+            this.labelPedal1.BackColor = System.Drawing.Color.Transparent;
+            this.labelPedal1.Font = new System.Drawing.Font("Unispace", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPedal1.ForeColor = System.Drawing.Color.Aqua;
+            this.labelPedal1.Location = new System.Drawing.Point(130, 405);
+            this.labelPedal1.Name = "labelPedal1";
+            this.labelPedal1.Size = new System.Drawing.Size(25, 10);
+            this.labelPedal1.TabIndex = 65;
+            this.labelPedal1.Text = "50 %";
+            this.labelPedal1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelPedal2
+            // 
+            this.labelPedal2.AutoSize = true;
+            this.labelPedal2.BackColor = System.Drawing.Color.Transparent;
+            this.labelPedal2.Font = new System.Drawing.Font("Unispace", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPedal2.ForeColor = System.Drawing.Color.Aqua;
+            this.labelPedal2.Location = new System.Drawing.Point(130, 422);
+            this.labelPedal2.Name = "labelPedal2";
+            this.labelPedal2.Size = new System.Drawing.Size(25, 10);
+            this.labelPedal2.TabIndex = 66;
+            this.labelPedal2.Text = "50 %";
+            this.labelPedal2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelPedal3
+            // 
+            this.labelPedal3.AutoSize = true;
+            this.labelPedal3.BackColor = System.Drawing.Color.Transparent;
+            this.labelPedal3.Font = new System.Drawing.Font("Unispace", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPedal3.ForeColor = System.Drawing.Color.Aqua;
+            this.labelPedal3.Location = new System.Drawing.Point(130, 438);
+            this.labelPedal3.Name = "labelPedal3";
+            this.labelPedal3.Size = new System.Drawing.Size(25, 10);
+            this.labelPedal3.TabIndex = 67;
+            this.labelPedal3.Text = "50 %";
+            this.labelPedal3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::brWheelProfile.Properties.Resources.labelHShifter;
+            this.pictureBox1.Location = new System.Drawing.Point(161, 407);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormBRWProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1175,37 +1291,47 @@
             this.BackgroundImage = global::brWheelProfile.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(695, 480);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelPedal3);
+            this.Controls.Add(this.labelPedal2);
+            this.Controls.Add(this.labelPedal1);
+            this.Controls.Add(this.panelPedal3);
+            this.Controls.Add(this.panelPedal2);
+            this.Controls.Add(this.panelPedal1);
+            this.Controls.Add(this.panelBGPedal3);
+            this.Controls.Add(this.panelBGPedal2);
+            this.Controls.Add(this.panelBGPedal1);
+            this.Controls.Add(this.btn32);
+            this.Controls.Add(this.btn31);
+            this.Controls.Add(this.btn30);
+            this.Controls.Add(this.btn29);
+            this.Controls.Add(this.btn28);
+            this.Controls.Add(this.btn27);
+            this.Controls.Add(this.btn26);
+            this.Controls.Add(this.btn25);
+            this.Controls.Add(this.btn24);
+            this.Controls.Add(this.btn23);
+            this.Controls.Add(this.btn22);
+            this.Controls.Add(this.btn21);
+            this.Controls.Add(this.btn20);
+            this.Controls.Add(this.btn19);
+            this.Controls.Add(this.btn18);
+            this.Controls.Add(this.btn17);
+            this.Controls.Add(this.btn16);
+            this.Controls.Add(this.btn15);
+            this.Controls.Add(this.btn14);
+            this.Controls.Add(this.btn13);
+            this.Controls.Add(this.btn12);
+            this.Controls.Add(this.btn11);
+            this.Controls.Add(this.btn10);
+            this.Controls.Add(this.btn9);
+            this.Controls.Add(this.btn8);
+            this.Controls.Add(this.btn7);
+            this.Controls.Add(this.btn6);
+            this.Controls.Add(this.btn5);
+            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btn3);
+            this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.boxMinimize);
             this.Controls.Add(this.boxClose);
@@ -1264,9 +1390,13 @@
             this.MinimumSize = new System.Drawing.Size(695, 460);
             this.Name = "FormBRWProfile";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BRWheel Profile";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBRWProfile_FormClosed);
             this.Load += new System.EventHandler(this.form_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormBRWProfile_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormBRWProfile_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormBRWProfile_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpring)).EndInit();
@@ -1283,6 +1413,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBRW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1341,37 +1472,49 @@
         private System.Windows.Forms.PictureBox boxClose;
         private System.Windows.Forms.PictureBox boxMinimize;
         private System.Windows.Forms.Label btn1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label btn2;
+        private System.Windows.Forms.Label btn3;
+        private System.Windows.Forms.Label btn4;
+        private System.Windows.Forms.Label btn8;
+        private System.Windows.Forms.Label btn7;
+        private System.Windows.Forms.Label btn6;
+        private System.Windows.Forms.Label btn5;
+        private System.Windows.Forms.Label btn16;
+        private System.Windows.Forms.Label btn15;
+        private System.Windows.Forms.Label btn14;
+        private System.Windows.Forms.Label btn13;
+        private System.Windows.Forms.Label btn12;
+        private System.Windows.Forms.Label btn11;
+        private System.Windows.Forms.Label btn10;
+        private System.Windows.Forms.Label btn9;
+        private System.Windows.Forms.Label btn24;
+        private System.Windows.Forms.Label btn23;
+        private System.Windows.Forms.Label btn22;
+        private System.Windows.Forms.Label btn21;
+        private System.Windows.Forms.Label btn20;
+        private System.Windows.Forms.Label btn19;
+        private System.Windows.Forms.Label btn18;
+        private System.Windows.Forms.Label btn17;
+        private System.Windows.Forms.Label btn32;
+        private System.Windows.Forms.Label btn31;
+        private System.Windows.Forms.Label btn30;
+        private System.Windows.Forms.Label btn29;
+        private System.Windows.Forms.Label btn28;
+        private System.Windows.Forms.Label btn27;
+        private System.Windows.Forms.Label btn26;
+        private System.Windows.Forms.Label btn25;
+
+        // pedals
+        private System.Windows.Forms.Panel panelBGPedal1;
+        private System.Windows.Forms.Panel panelBGPedal2;
+        private System.Windows.Forms.Panel panelBGPedal3;
+        private System.Windows.Forms.Panel panelPedal3;
+        private System.Windows.Forms.Panel panelPedal2;
+        private System.Windows.Forms.Panel panelPedal1;
+        private System.Windows.Forms.Label labelPedal1;
+        private System.Windows.Forms.Label labelPedal2;
+        private System.Windows.Forms.Label labelPedal3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

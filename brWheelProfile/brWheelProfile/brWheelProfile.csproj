@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="brico.ico" />
+    <None Include="Resources\labelHShifter.png" />
     <None Include="Resources\brw.ico" />
     <None Include="Resources\brw.png" />
     <None Include="Resources\bg.jpg" />

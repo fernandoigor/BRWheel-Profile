@@ -481,7 +481,46 @@ namespace brWheelProfile
             boxMinimize.Image = brWheelProfile.Properties.Resources.btn_Click;
             this.WindowState = FormWindowState.Minimized;
         }
+        private void btnMinimizeClick(object sender, MouseEventArgs e)
+        {
+            boxMinimize.Image = brWheelProfile.Properties.Resources.btn_Click;
+        }
 
+        private void btnCloseClick(object sender, MouseEventArgs e)
+        {
+            boxClose.Image = brWheelProfile.Properties.Resources.btnXClick;
+        }
+
+
+
+        /*
+         * MOVE WINDOWS FORM
+         * 
+         * */
+
+        Point lastLocation;
+        bool mouseDown = false;
+
+        private void FormBRWProfile_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void FormBRWProfile_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                int mouseX = this.Location.X - lastLocation.X + e.X;
+                int mouseY = this.Location.Y - lastLocation.Y + e.Y;
+                this.SetDesktopLocation(mouseX, mouseY);
+            }
+        }
+
+        private void FormBRWProfile_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
 
     }
 }
